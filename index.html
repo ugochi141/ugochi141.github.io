@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugochi Ndubuisi - Laboratory Operations Leader & Bioinformatics Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E97F7;
+            --secondary: #1a73e8;
+            --dark: #1a1a2e;
+            --light: #f5f5f5;
+            --accent: #4ade80;
+            --dna-purple: #764ba2;
+            --gene-green: #00a86b;
+            --variant-orange: #ff6900;
+            --text: #333;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bio-gradient: linear-gradient(135deg, #00a86b 0%, #2E97F7 100%);
+            --epic-gradient: linear-gradient(135deg, #ff6900 0%, #fc4900 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background: #fafafa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--bio-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dna-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 50px,
+                rgba(118, 75, 162, 0.1) 50px,
+                rgba(118, 75, 162, 0.1) 100px
+            );
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: var(--bio-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .badge i {
+            color: var(--primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(46, 151, 247, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Code Display */
+        .code-display {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 2rem;
+            border-radius: 10px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .code-display .keyword {
+            color: #569cd6;
+        }
+
+        .code-display .string {
+            color: #ce9178;
+        }
+
+        .code-display .function {
+            color: #dcdcaa;
+        }
+
+        .code-display .comment {
+            color: #6a9955;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .experience-timeline {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .experience-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .experience-date {
+            min-width: 200px;
+            text-align: right;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .experience-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .experience-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .experience-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-content .company {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .experience-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header.ngs {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .project-header.gene {
+            background: linear-gradient(135deg, #00a86b 0%, #2E97F7 100%);
+            color: white;
+        }
+
+        .project-header.disease {
+            background: linear-gradient(135deg, #ff6900 0%, #fcb900 100%);
+            color: white;
+        }
+
+        .project-header.jarid2 {
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            color: white;
+        }
+
+        .project-header.epic {
+            background: var(--epic-gradient);
+            color: white;
+        }
+
+        .project-header.lean {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header p {
+            opacity: 0.9;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            background: #e3f2fd;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .metric i {
+            color: var(--primary);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .projects-grid, .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                flex-direction: column;
+            }
+
+            .experience-date {
+                text-align: left;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">UN.bio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="dna-background"></div>
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Ugochi Ndubuisi</h1>
+                <p class="subtitle">Laboratory Operations Leader & Bioinformatics Developer</p>
+                <p>Bridging clinical laboratory excellence with computational genomics. Currently Laboratory Operation Manager at Kaiser Permanente while pursuing MS in Biotechnology at Johns Hopkins University.</p>
+                
+                <div class="hero-badges">
+                    <div class="badge">
+                        <i class="fas fa-flask"></i>
+                        <span>6+ Years Lab Leadership</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-dna"></i>
+                        <span>20 Disease Genes</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Epic Beaker Trainer</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>DHSc, MT(AMT)</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i> View Projects
+                    </a>
+                    <a href="https://github.com/ugochi141" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual fade-in">
+                <div class="code-display">
+                    <pre><code><span class="comment"># Laboratory Automation & NGS Analysis</span>
+<span class="keyword">def</span> <span class="function">optimize_lab_workflow</span>(process):
+    <span class="string">"""Integrate Epic Beaker with NGS pipeline"""</span>
+    automation = <span class="function">implement_lims</span>(process)
+    efficiency = automation.throughput * 1.3
+    errors = automation.errors * 0.75
+    
+    <span class="comment"># Bioinformatics integration</span>
+    variant = <span class="function">analyze_ngs_data</span>(sample)
+    vep_result = <span class="function">run_vep</span>(variant)
+    
+    <span class="keyword">return</span> {
+        <span class="string">'efficiency_gain'</span>: <span class="string">'30%'</span>,
+        <span class="string">'error_reduction'</span>: <span class="string">'25%'</span>,
+        <span class="string">'variant_status'</span>: <span class="string">'VUS'</span>
+    }</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">30%</span>
+                <span class="stat-label">Throughput Increase</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2,000+</span>
+                <span class="stat-label">Daily Samples</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">25%</span>
+                <span class="stat-label">Error Reduction</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">20</span>
+                <span class="stat-label">Disease Genes Found</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience fade-in" id="experience">
+        <div class="section-container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-date">January 2025 - Present</div>
+                    <div class="experience-content">
+                        <h3>Laboratory Operation Manager</h3>
+                        <p class="company">Kaiser Permanente - Largo, Maryland</p>
+                        <ul class="experience-highlights">
+                            <li>Implemented comprehensive laboratory automation solution increasing throughput by 30% and reducing manual errors by 25%</li>
+                            <li>Directed integration of DI middleware into core laboratory workflows</li>
+                            <li>Spearheaded alignment of laboratory processes with Epic Beaker and DI middleware over 5 months</li>
+                            <li>Achieved 15% improvement in test turnaround times impacting 30,000+ patient samples per quarter</li>
+                            <li>Optimized workflows achieving 20% increase in operational efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">April 2024 - January 2025</div>
+                    <div class="experience-content">
+                        <h3>Clinical Laboratory Scientist III (Hematology Technical Supervisor)</h3>
+                        <p class="company">Johns Hopkins University Hospital - Baltimore, MD</p>
+                        <ul class="experience-highlights">
+                            <li>Directed hematology laboratory team processing 2000+ samples daily</li>
+                            <li>Led team of 10 technologists achieving 20% improvement in test accuracy</li>
+                            <li>Implemented advanced hematology diagnostic equipment increasing testing accuracy by 25%</li>
+                            <li>Reduced error rate by 15% through integration of automated data analysis tools</li>
+                            <li>Ensured compliance with CAP and CLIA regulations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">April 2023 - February 2024</div>
+                    <div class="experience-content">
+                        <h3>Medical Technologist (Technical Supervisor)</h3>
+                        <p class="company">Riverside Regional Medical Center - Newport News, VA</p>
+                        <ul class="experience-highlights">
+                            <li>Supervised team of 15 laboratory technicians increasing testing accuracy by 25%</li>
+                            <li>Implemented new laboratory information system reducing turnaround times by 25%</li>
+                            <li>Managed implementation of DI middleware across clinical laboratory handling 5,000+ samples weekly</li>
+                            <li>Achieved 30% reduction in manual data entry errors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects fade-in" id="projects">
+        <div class="section-container">
+            <h2 class="section-title">Research & Optimization Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Laboratory Optimization Project -->
+                <div class="project-card">
+                    <div class="project-header epic">
+                        <h3>Core Laboratory Workflow Optimization</h3>
+                        <p>Kaiser Permanente Initiative</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Streamlined sample processing by integrating Lean Six Sigma methodologies with Epic Beaker and DI middleware implementation.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-chart-line"></i>
+                                <span>30% Throughput Increase</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-clock"></i>
+                                <span>25% TAT Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-check-circle"></i>
+                                <span>22% Efficiency Gain</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Epic Beaker</span>
+                            <span class="tech-tag">DI Middleware</span>
+                            <span class="tech-tag">Lean Six Sigma</span>
+                            <span class="tech-tag">LIMS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JARID2 SNP Project -->
+                <div class="project-card">
+                    <div class="project-header jarid2">
+                        <h3>JARID2 rs78636169 Analysis</h3>
+                        <p>Alzheimer's disease association study</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Comprehensive analysis of SNP rs78636169 upstream of JARID2, associated with tau accumulation and Alzheimer's disease pathology.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-dna"></i>
+                                <span>chr6:15241774</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-brain"></i>
+                                <span>P = 5.76×10⁻¹⁰</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-users"></i>
+                                <span>686 Samples</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">GWAS</span>
+                            <span class="tech-tag">IGV</span>
+                            <span class="tech-tag">VEP</span>
+                            <span class="tech-tag">gnomAD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hematology Optimization -->
+                <div class="project-card">
+                    <div class="project-header lean">
+                        <h3>Hematology Section Optimization</h3>
+                        <p>Johns Hopkins Hospital</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Led Lean project optimizing Sysmex stainer cleaning procedures, implementing methanol-based process to prevent stain buildup.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-tools"></i>
+                                <span>30% Less Downtime</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-calendar"></i>
+                                <span>2-Year Lifespan Extension</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Lean Six Sigma</span>
+                            <span class="tech-tag">Process Optimization</span>
+                            <span class="tech-tag">Training Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NGS Variant Analysis -->
+                <div class="project-card">
+                    <div class="project-header ngs">
+                        <h3>NGS Variant Analysis Pipeline</h3>
+                        <p>Clinical variant interpretation system</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed comprehensive pipeline for analyzing patient variants using Ensembl VEP, gnomAD, and ClinVar databases.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-dna"></i>
+                                <span>chr6:15241774 A>G</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-tag"></i>
+                                <span>VUS Classification</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">VEP v114.2</span>
+                            <span class="tech-tag">gnomAD</span>
+                            <span class="tech-tag">matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mitochondrial Genes -->
+                <div class="project-card">
+                    <div class="project-header disease">
+                        <h3>Mitochondrial-Neurological Discovery</h3>
+                        <p>Disease gene identification project</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Mined 2,847 mitochondrial genes to identify associations with neurological disorders using OMIM database.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-search"></i>
+                                <span>20 Genes Found</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-pills"></i>
+                                <span>60% Drug Targets</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">biomaRt</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">OMIM</span>
+                            <span class="tech-tag">GO Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ADHD Gender Study -->
+                <div class="project-card">
+                    <div class="project-header disease">
+                        <h3>ADHD Gender-Based Study</h3>
+                        <p>DHSc Dissertation Research</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Explored psychological and social impacts of late ADHD diagnosis in adult women through qualitative phenomenological research.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-users"></i>
+                                <span>30 Participants</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-venus"></i>
+                                <span>Women 18+</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Qualitative Research</span>
+                            <span class="tech-tag">Phenomenology</span>
+                            <span class="tech-tag">Clinical Psychology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills fade-in" id="skills">
+        <div class="section-container">
+            <h2 class="section-title">Technical Expertise</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><i class="fas fa-flask"></i> Laboratory Management</h3>
+                    <ul class="skill-list">
+                        <li>Laboratory workflow optimization</li>
+                        <li>Epic Beaker CP/AP implementation</li>
+                        <li>LIS/LIMS integration</li>
+                        <li>Quality control & regulatory compliance</li>
+                        <li>Team leadership & training</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3><i class="fas fa-code"></i> Programming & Development</h3>
+                    <ul class="skill-list">
+                        <li>Python (BioPython, matplotlib, pandas)</li>
+                        <li>R (biomaRt, ggplot2, dplyr)</li>
+                        <li>SQL database design and queries</li>
+                        <li>Bash scripting and automation</li>
+                        <li>Git version control</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3><i class="fas fa-dna"></i> Bioinformatics Tools</h3>
+                    <ul class="skill-list">
+                        <li>Ensembl VEP (v114.2)</li>
+                        <li>BLAST & sequence alignment</li>
+                        <li>Glimmer3 gene prediction</li>
+                        <li>gnomAD & ClinVar integration</li>
+                        <li>NGS data analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-line"></i> Process Improvement</h3>
+                    <ul class="skill-list">
+                        <li>Lean Six Sigma methodologies</li>
+                        <li>Workflow optimization</li>
+                        <li>Data-driven decision making</li>
+                        <li>Performance monitoring</li>
+                        <li>KPI development & tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3><i class="fas fa-microscope"></i> Laboratory Techniques</h3>
+                    <ul class="skill-list">
+                        <li>PCR, ELISA, chromatography</li>
+                        <li>Hematology & molecular diagnostics</li>
+                        <li>High-throughput equipment operation</li>
+                        <li>CAP/CLIA compliance</li>
+                        <li>Safety protocols & auditing</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Domain Knowledge</h3>
+                    <ul class="skill-list">
+                        <li>Clinical laboratory operations</li>
+                        <li>Gene structure & regulation</li>
+                        <li>Disease genetics</li>
+                        <li>Healthcare informatics</li>
+                        <li>Regulatory standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications fade-in" id="certifications">
+        <div class="section-container">
+            <h2 class="section-title">Certifications & Credentials</h2>
+            
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>Medical Technologist (AMT)</h4>
+                    <p>American Medical Technologists<br>2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h4>Molecular Biology (ASCP)</h4>
+                    <p>American Society of Clinical Pathology<br>2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h4>Epic Trainer - Beaker CP/AP</h4>
+                    <p>Johns Hopkins Hospital<br>2024</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Lean Six Sigma Green Belt</h4>
+                    <p>Johns Hopkins Armstrong Institute<br>2024</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Lean Practitioner Healthcare</h4>
+                    <p>Johns Hopkins Armstrong Institute<br>2024</p>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4>Molecular Diagnostics</h4>
+                    <p>Old Dominion University<br>2019</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>Interested in laboratory optimization, bioinformatics projects, or healthcare innovation?</p>
+            
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/ugochindubuisi" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ugochi141" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:u.l.ndubuisi@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+13014623716" title="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ugochi Ndubuisi, DHSc, MT(AMT), MB(ASCP). All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
