@@ -1382,166 +1382,48 @@
             <div class="github-projects-grid">
                 <!-- 
                 ============================================
-                TO ADD YOUR GITHUB PROJECTS:
+                GITHUB PROJECTS - AUTOMATIC LOADING ENABLED! ✅
                 
-                1. Go to your GitHub: https://github.com/ugochi141?tab=repositories
-                2. For each repository you want to showcase, copy a project card below
-                3. Update the following information:
-                   
-                   Project Title: Replace with your repository name
-                   Description: Add a brief description of what the project does
-                   Tags: Update with actual technologies used (Python, R, JavaScript, etc.)
-                   GitHub link: Replace [REPO-NAME] with your actual repository name
-                   Live demo: Add if you have a live version, otherwise remove this link
-                   Stars/Forks: Update with current counts (or remove if 0)
+                Your GitHub repositories will load automatically when someone visits your site.
+                The 12 most recently updated repositories will be displayed.
                 
-                Example:
-                If your repo is: https://github.com/ugochi141/covid-data-analysis
-                Then update link to: href="https://github.com/ugochi141/covid-data-analysis"
+                Features:
+                - Shows repository name
+                - Displays description (if available)
+                - Shows star and fork counts
+                - Lists primary programming language
+                - Links to GitHub repo
+                - Shows live demo link (if homepage URL is set in repo settings)
                 
-                Popular tags to use:
-                - Languages: Python, R, JavaScript, Java, SQL
-                - Data Science: Pandas, NumPy, Matplotlib, Seaborn
-                - Web: HTML, CSS, React, Node.js
-                - Bioinformatics: Biopython, Bioconductor, BLAST
-                - Healthcare: HL7, FHIR, Epic, Cerner
+                To improve what's displayed:
+                1. Add descriptions to your repos on GitHub
+                2. Set the primary language in your repos
+                3. Add homepage URLs in repo settings for live demos
+                4. Star your own important repos to highlight them
+                5. The most recently updated repos appear first
                 
-                You can add as many project cards as you have repositories!
-                The grid will automatically adjust to fit them all.
+                To change the number of repos displayed:
+                - Edit the fetch URL: per_page=12 (change 12 to any number)
                 
-                BONUS - Automate with GitHub API:
-                If you want to automatically display all your repos, you can use:
+                To disable automatic loading:
+                - Comment out: loadGitHubRepos();
+                - Then add manual project cards
                 
-                fetch('https://api.github.com/users/ugochi141/repos')
-                  .then(response => response.json())
-                  .then(repos => {
-                    // Create cards for each repo
-                  });
-                
-                This would dynamically load all your public repositories!
+                Troubleshooting:
+                - If repos don't load, check browser console (F12)
+                - GitHub API limit: 60 requests/hour (unauthenticated)
+                - Make sure your repos are public
                 ============================================
                 -->
                 
+                <!-- These placeholder cards will be replaced when repos load -->
                 <div class="github-project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Portfolio Website</h3>
-                        <div class="github-stats">
-                            <span class="stat">⭐ Stars: 0</span>
-                            <span class="stat">🍴 Forks: 0</span>
-                        </div>
+                        <h3 class="project-title">Loading repositories...</h3>
                     </div>
                     <p class="project-description">
-                        Modern, responsive portfolio website showcasing laboratory management expertise and healthcare technology projects. Built with HTML5, CSS3, and JavaScript.
+                        Fetching your latest GitHub projects...
                     </p>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ugochi141/ugochi141.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <span>View Code</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                        </a>
-                        <a href="https://ugochi141.github.io/" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <span>Live Demo</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Add more GitHub projects here -->
-                <!-- PLACEHOLDER PROJECTS - Replace with your actual repositories! -->
-                <div class="github-project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Lab Data Analysis Tool</h3>
-                        <div class="github-stats">
-                            <span class="stat">⭐ Stars: 0</span>
-                            <span class="stat">🍴 Forks: 0</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Python-based tool for analyzing laboratory test results and generating automated reports. Includes statistical analysis and visualization features.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Data Analysis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ugochi141/[REPLACE-WITH-YOUR-REPO-NAME]" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <span>View Code</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="project-link">
-                            <span>Documentation</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Example: Laboratory Quality Control Dashboard -->
-                <div class="github-project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">QC Dashboard</h3>
-                        <div class="github-stats">
-                            <span class="stat">⭐ Stars: 0</span>
-                            <span class="stat">🍴 Forks: 0</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Interactive dashboard for monitoring laboratory quality control metrics. Visualizes Levey-Jennings charts, Westgard rules, and generates automated QC reports.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">R</span>
-                        <span class="tag">Shiny</span>
-                        <span class="tag">Quality Control</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ugochi141/[REPO-NAME]" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <span>View Code</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Example: Hematology Reference Range Calculator -->
-                <div class="github-project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Reference Range Calculator</h3>
-                        <div class="github-stats">
-                            <span class="stat">⭐ Stars: 0</span>
-                            <span class="stat">🍴 Forks: 0</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Web application for calculating age and gender-specific reference ranges for hematology parameters. Includes pediatric and adult ranges with confidence intervals.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">Clinical Chemistry</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ugochi141/[REPO-NAME]" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <span>View Code</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                        </a>
-                    </div>
                 </div>
             </div>
 
@@ -2118,71 +2000,98 @@
             observer.observe(category);
         });
 
-        // Optional: Dynamically load GitHub repositories
-        // Uncomment this section to automatically fetch and display your GitHub repos
-        /*
+        // Dynamically load GitHub repositories
+        // This function automatically fetches and displays your GitHub repos
         async function loadGitHubRepos() {
             try {
-                const response = await fetch('https://api.github.com/users/ugochi141/repos?sort=updated&per_page=6');
+                // Fetch up to 12 most recently updated repositories
+                const response = await fetch('https://api.github.com/users/ugochi141/repos?sort=updated&per_page=12');
                 const repos = await response.json();
                 
                 const githubGrid = document.querySelector('.github-projects-grid');
-                githubGrid.innerHTML = ''; // Clear placeholder cards
                 
-                repos.forEach(repo => {
-                    const repoCard = `
-                        <div class="github-project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">${repo.name}</h3>
-                                <div class="github-stats">
-                                    <span class="stat">⭐ Stars: ${repo.stargazers_count}</span>
-                                    <span class="stat">🍴 Forks: ${repo.forks_count}</span>
+                // Check if we received an array of repos
+                if (Array.isArray(repos) && repos.length > 0) {
+                    githubGrid.innerHTML = ''; // Clear placeholder cards
+                    
+                    repos.forEach(repo => {
+                        const repoCard = `
+                            <div class="github-project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">${repo.name}</h3>
+                                    <div class="github-stats">
+                                        <span class="stat">⭐ Stars: ${repo.stargazers_count}</span>
+                                        <span class="stat">🍴 Forks: ${repo.forks_count}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="project-description">
-                                ${repo.description || 'No description available'}
-                            </p>
-                            <div class="project-tags">
-                                ${repo.language ? `<span class="tag">${repo.language}</span>` : ''}
-                                ${repo.topics ? repo.topics.map(topic => `<span class="tag">${topic}</span>`).join('') : ''}
-                            </div>
-                            <div class="project-links">
-                                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="project-link">
-                                    <span>View Code</span>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                    </svg>
-                                </a>
-                                ${repo.homepage ? `
-                                    <a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="project-link">
-                                        <span>Live Demo</span>
+                                <p class="project-description">
+                                    ${repo.description || 'No description available'}
+                                </p>
+                                <div class="project-tags">
+                                    ${repo.language ? `<span class="tag">${repo.language}</span>` : ''}
+                                    ${repo.topics ? repo.topics.map(topic => `<span class="tag">${topic}</span>`).join('') : ''}
+                                </div>
+                                <div class="project-links">
+                                    <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <span>View Code</span>
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"/>
-                                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                                         </svg>
                                     </a>
-                                ` : ''}
+                                    ${repo.homepage ? `
+                                        <a href="${repo.homepage}" target="_blank" rel="noopener noreferrer" class="project-link">
+                                            <span>Live Demo</span>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                            </svg>
+                                        </a>
+                                    ` : ''}
+                                </div>
                             </div>
+                        `;
+                        githubGrid.innerHTML += repoCard;
+                    });
+                    
+                    // Re-apply animations to new cards
+                    document.querySelectorAll('.github-project-card').forEach(card => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(30px)';
+                        card.style.transition = 'all 0.6s ease-out';
+                        observer.observe(card);
+                    });
+                } else {
+                    // No repos found or error - show message
+                    githubGrid.innerHTML = `
+                        <div class="github-project-card">
+                            <div class="project-header">
+                                <h3 class="project-title">No repositories found</h3>
+                            </div>
+                            <p class="project-description">
+                                Create your first repository on GitHub to showcase your projects here!
+                            </p>
                         </div>
                     `;
-                    githubGrid.innerHTML += repoCard;
-                });
-                
-                // Re-apply animations to new cards
-                document.querySelectorAll('.github-project-card').forEach(card => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(30px)';
-                    card.style.transition = 'all 0.6s ease-out';
-                    observer.observe(card);
-                });
+                }
             } catch (error) {
                 console.error('Error loading GitHub repos:', error);
+                // Show error message
+                const githubGrid = document.querySelector('.github-projects-grid');
+                githubGrid.innerHTML = `
+                    <div class="github-project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Unable to load repositories</h3>
+                        </div>
+                        <p class="project-description">
+                            Please check your internet connection and try refreshing the page.
+                        </p>
+                    </div>
+                `;
             }
         }
         
-        // Call this function when the page loads
-        // loadGitHubRepos();
-        */
+        // Call this function when the page loads to automatically fetch repositories
+        loadGitHubRepos();
     </script>
     
     <!-- 
@@ -2219,24 +2128,30 @@
     - Add reCAPTCHA: https://formspree.io/forms/xrblbqqb/settings/plugins
     
     ============================================
-    📁 GITHUB PROJECTS SETUP
+    📁 GITHUB PROJECTS SETUP - AUTOMATIC LOADING ACTIVE! ✅
     ============================================
     
-    Your portfolio now includes a section for GitHub projects!
+    Your portfolio now automatically loads your GitHub repositories!
     
-    To add your repositories:
-    1. Find the "GitHub Projects" section (around line 900)
-    2. Replace the placeholder projects with your actual repos
-    3. Update project names, descriptions, and links
+    Current Settings:
+    - Shows up to 12 most recent repositories
+    - Updates every time someone visits your site
+    - Displays stars, forks, and programming languages
+    - Includes links to code and live demos (if set)
     
-    OR use the automatic method:
-    1. Find the loadGitHubRepos() function (around line 1800)
-    2. Uncomment the function and the call at the bottom
-    3. This will automatically fetch your 6 most recent repos!
+    To enhance your GitHub projects display:
+    1. Add good descriptions to your repos on GitHub
+    2. Set homepage URLs in repo settings for live demos
+    3. Keep your important repos updated (they'll appear first)
+    
+    To modify:
+    - Change number of repos: Edit per_page=12 in the fetch URL
+    - Disable auto-loading: Comment out loadGitHubRepos();
+    - Add manual projects: Use the template cards provided
     
     The "View All Projects on GitHub" button links to all your repositories.
     
-    Enjoy your enhanced portfolio! 🎉
+    Happy coding! 🚀
     ============================================
     -->
 </body>
