@@ -4,283 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ugochi Ndubuisi - Bioinformatics Developer & Healthcare Professional</title>
-    <meta name="description" content="Ugochi Ndubuisi - Bioinformatics Developer & Healthcare Professional specializing in NGS analysis, gene prediction, and disease-gene discovery.">
-    <meta name="keywords" content="bioinformatics, NGS analysis, gene prediction, healthcare technology">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Your existing CSS styles here */
-        
-        /* New styles for blog section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .blog-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-        .blog-card h3 {
-            padding: 1rem;
-            font-size: 1.2rem;
-        }
-        .blog-card p {
-            padding: 0 1rem 1rem;
-            color: #666;
-        }
-        
-        /* New styles for testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .testimonial-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .testimonial-author {
-            font-weight: bold;
-            margin-top: 1rem;
-            text-align: right;
-        }
+        /* ... (copy all the CSS from the previous message here) ... */
     </style>
 </head>
 <body>
-    <nav id="navbar" aria-label="Main Navigation">
+    <!-- Navigation -->
+    <nav id="navbar">
         <div class="nav-container">
             <div class="logo">UN.bio</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#blog">Blog</a></li>
                 <li><a href="#research">Research</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="dna-background"></div>
         <div class="hero-content">
             <div class="hero-text fade-in">
                 <h1>Ugochi Ndubuisi</h1>
                 <p class="subtitle">Bioinformatics Developer & Healthcare Professional</p>
-                <p>Transforming genomic data into clinical insights through innovative computational solutions. Specializing in NGS analysis, gene prediction, and disease-gene discovery.</p>
-                
+                <p>Bridging the gap between healthcare and technology through innovative bioinformatics solutions.</p>
                 <div class="hero-badges">
-                    <div class="badge">
-                        <i class="fas fa-dna"></i>
-                        <span>20 Disease Genes</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-code"></i>
-                        <span>Python Developer</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-chart-line"></i>
-                        <span>NGS Analysis</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Johns Hopkins</span>
-                    </div>
+                    <span class="badge"><i class="fas fa-dna"></i> NGS Analysis</span>
+                    <span class="badge"><i class="fas fa-laptop-code"></i> Python</span>
+                    <span class="badge"><i class="fas fa-database"></i> SQL</span>
+                    <span class="badge"><i class="fas fa-chart-bar"></i> Data Visualization</span>
                 </div>
-
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-folder-open"></i> View Projects
-                    </a>
-                    <a href="https://github.com/ugochi141" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="path/to/your/resume.pdf" class="btn btn-secondary" download>
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-project-diagram"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
                 </div>
             </div>
-            
-            <div class="hero-visual fade-in">
-                <div class="code-display">
-                    <!-- Your existing code display content -->
-                </div>
+            <div class="code-display float">
+                <pre><code><span class="keyword">def</span> <span class="function">analyze_variant</span>(variant):
+    <span class="comment"># Perform VEP analysis</span>
+    vep_result = run_vep(variant)
+    
+    <span class="comment"># Classify variant</span>
+    classification = classify_variant(vep_result)
+    
+    <span class="comment"># Generate report</span>
+    report = generate_report(classification)
+    
+    <span class="keyword">return</span> report
+
+<span class="comment"># Example usage</span>
+variant = <span class="string">"chr6:15241774 A>G"</span>
+report = analyze_variant(variant)
+print(report)</code></pre>
             </div>
         </div>
     </section>
 
-    <section class="stats">
-        <!-- Your existing stats section content -->
-    </section>
-
+    <!-- Projects Section -->
     <section class="projects fade-in" id="projects">
         <div class="section-container">
-            <h2 class="section-title">Featured Bioinformatics Projects</h2>
-            
+            <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <!-- Your existing project cards -->
-
-                <!-- Critical Values Alert System -->
-                <div class="project-card">
-                    <div class="project-header ngs">
-                        <h3>Critical Values Alert System</h3>
-                        <p>Real-time monitoring for critical lab results</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Developed a Streamlit-based dashboard for real-time monitoring of critical laboratory values, enhancing patient safety and care quality.</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <i class="fas fa-bell"></i>
-                                <span>Real-time Alerts</span>
-                            </div>
-                            <div class="metric">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Trend Analysis</span>
-                            </div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Plotly</span>
-                            <span class="tech-tag">Pandas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lab Order Tracking System -->
-                <div class="project-card">
-                    <div class="project-header gene">
-                        <h3>Lab Order Tracking System</h3>
-                        <p>Streamlined laboratory order management</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Created a Streamlit application for tracking and managing laboratory orders, improving efficiency and reducing errors in sample processing.</p>
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <i class="fas fa-tasks"></i>
-                                <span>Order Tracking</span>
-                            </div>
-                            <div class="metric">
-                                <i class="fas fa-search"></i>
-                                <span>Search Function</span>
-                            </div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">SQLite</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- ... (copy the project cards from the previous message here) ... -->
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section class="skills fade-in" id="skills">
         <div class="section-container">
-            <h2 class="section-title">Technical Expertise</h2>
-            
+            <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3><i class="fas fa-code"></i> Programming & Development</h3>
-                    <ul class="skill-list">
-                        <li>Python (BioPython, matplotlib, pandas, Streamlit, Plotly)</li>
-                        <li>R (biomaRt, ggplot2, dplyr)</li>
-                        <li>SQL database design and queries</li>
-                        <li>Bash scripting and automation</li>
-                        <li>Git version control</li>
-                        <li>SQLite database management</li>
-                    </ul>
-                </div>
-                <!-- Other skill cards... -->
+                <!-- ... (copy the skill cards from the previous message here) ... -->
             </div>
         </div>
     </section>
 
-    <section class="blog fade-in" id="blog">
-        <div class="section-container">
-            <h2 class="section-title">Latest Articles</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <h3>The Future of NGS in Clinical Diagnostics</h3>
-                    <p>Exploring how next-generation sequencing is revolutionizing personalized medicine...</p>
-                    <a href="blog/ngs-clinical-diagnostics.html" class="btn btn-secondary">Read More</a>
-                </div>
-                <!-- More blog cards... -->
-            </div>
-        </div>
-    </section>
-
+    <!-- Research Timeline -->
     <section class="research fade-in" id="research">
-        <!-- Your existing research timeline content -->
-    </section>
-
-    <section class="testimonials fade-in" id="testimonials">
         <div class="section-container">
-            <h2 class="section-title">What Colleagues Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>"Ugochi's expertise in bioinformatics has been invaluable to our research team."</p>
-                    <p class="testimonial-author">- Dr. Jane Smith, Research Director</p>
-                </div>
-                <!-- More testimonial cards... -->
+            <h2 class="section-title">Research Journey</h2>
+            
+            <div class="research-timeline">
+                <!-- ... (copy the timeline items from the previous message here) ... -->
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <!-- Your existing contact section content -->
+        <div class="section-container">
+            <h2 class="section-title">Let's Collaborate</h2>
+            <p>Interested in bioinformatics projects, NGS analysis, or healthcare innovation?</p>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/ugochindubuisi" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ugochi141" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:u.l.ndubuisi@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Ugochi Ndubuisi, DHSc, MT(AMT), MB(ASCP). All rights reserved.</p>
     </footer>
 
     <script>
-        // Your existing JavaScript code
-
-        // New JavaScript for project filtering
-        const filterProjects = (category) => {
-            const projects = document.querySelectorAll('.project-card');
-            projects.forEach(project => {
-                if (category === 'all' || project.classList.contains(category)) {
-                    project.style.display = 'block';
-                } else {
-                    project.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-TRACKING-ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'YOUR-TRACKING-ID');
+        // ... (copy the JavaScript from the previous message here) ...
     </script>
 </body>
 </html>
-<!-- Remove or comment out this section
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-TRACKING-ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'YOUR-TRACKING-ID');
-</script>
--->
