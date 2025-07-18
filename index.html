@@ -503,11 +503,27 @@
             font-weight: 500;
             transition: all 0.3s ease;
             padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .project-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
         }
 
         .project-link:hover {
             gap: 0.75rem;
             color: var(--text-primary);
+        }
+
+        .project-link:hover::after {
+            width: 100%;
         }
 
         .project-link svg {
@@ -552,12 +568,15 @@
         }
 
         .contact-item {
+            display: block;
             text-align: center;
             padding: 2rem;
             background: var(--bg-dark);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
         .contact-item:hover {
@@ -617,6 +636,28 @@
 
         .contact-form .btn {
             align-self: flex-start;
+        }
+
+        /* Form Messages */
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .form-message.error {
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
         }
 
         /* Experience Timeline */
@@ -790,6 +831,164 @@
         .social-link:hover {
             color: var(--primary);
             transform: translateY(-3px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            max-width: 800px;
+            margin: 5rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+        }
+
+        .modal-close:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            margin-bottom: 2rem;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .modal-section p,
+        .modal-section li {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .modal-section ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .modal-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .metric-card {
+            background: var(--bg-dark);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            animation: countUp 1s ease-out;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -1028,13 +1227,13 @@
                         Streamlined sample processing at Kaiser Permanente by integrating Lean Six Sigma methodologies and Epic Beaker, achieving 30% throughput increase and 25% reduction in manual errors. Implemented continuous performance monitoring dashboards for proactive workflow optimization.
                     </p>
                     <div class="project-links">
-                        <a href="#" class="project-link">
+                        <a href="#" class="project-link" onclick="openModal('workflow-modal'); return false;">
                             <span>View Details</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </a>
-                        <a href="#" class="project-link">
+                        <a href="#" class="project-link" onclick="openModal('workflow-modal'); return false;">
                             <span>Metrics Dashboard</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="10"/>
@@ -1057,13 +1256,13 @@
                         Led Lean project at Johns Hopkins Hospital optimizing Sysmex stainer procedures, resulting in 30% reduction in maintenance downtime and 2-year equipment lifespan extension. Developed comprehensive training materials and visual aids for standardized procedures.
                     </p>
                     <div class="project-links">
-                        <a href="#" class="project-link">
+                        <a href="#" class="project-link" onclick="openModal('hematology-modal'); return false;">
                             <span>Case Study</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </a>
-                        <a href="#" class="project-link">
+                        <a href="#" class="project-link" onclick="openModal('hematology-modal'); return false;">
                             <span>Training Materials</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -1086,13 +1285,13 @@
                         Conducted phenomenological study exploring gender-based issues in late ADHD diagnosis among 30 adult women. Research at George Washington University revealed critical barriers to early diagnosis and informed clinical practice recommendations.
                     </p>
                     <div class="project-links">
-                        <a href="#" class="project-link">
+                        <a href="#" class="project-link" onclick="openModal('adhd-modal'); return false;">
                             <span>Read Abstract</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
                             </svg>
                         </a>
-                        <a href="#" class="project-link">
+                        <a href="#" class="project-link" onclick="openModal('adhd-modal'); return false;">
                             <span>Research Paper</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -1185,31 +1384,112 @@
             <p class="contact-subtitle">Let's collaborate on innovative bioinformatics solutions</p>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <a href="mailto:u.l.ndubuisi@gmail.com" class="contact-item">
                         <div class="contact-icon">📧</div>
                         <h3>Email</h3>
                         <p>u.l.ndubuisi@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+                    <a href="https://www.linkedin.com/in/ugochindubuisi" target="_blank" rel="noopener noreferrer" class="contact-item">
                         <div class="contact-icon">💼</div>
                         <h3>LinkedIn</h3>
                         <p>linkedin.com/in/ugochindubuisi</p>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+                    <a href="tel:+13014623716" class="contact-item">
                         <div class="contact-icon">📱</div>
                         <h3>Phone</h3>
                         <p>(301) 462-3716</p>
-                    </div>
+                    </a>
                 </div>
-                <form class="contact-form">
+                <!-- 
+                    CONTACT FORM SETUP INSTRUCTIONS:
+                    
+                    Option 1: Formspree (Recommended - Works on any hosting)
+                    1. Go to https://formspree.io and sign up for free
+                    2. Click "New Form" and give it a name (e.g., "Portfolio Contact")
+                    3. Copy your form endpoint (looks like: https://formspree.io/f/xyzabcde)
+                    4. Replace the action URL below with your endpoint
+                    5. Remove method="post" enctype="text/plain" (Formspree handles this)
+                    
+                    EXAMPLE: If your Formspree endpoint is https://formspree.io/f/mwkjvqrn
+                    Then change: action="https://formspree.io/f/YOUR_FORM_ID"
+                    To: action="https://formspree.io/f/mwkjvqrn"
+                    
+                    Option 2: Netlify Forms (If hosting on Netlify)
+                    1. Add data-netlify="true" to the form tag
+                    2. Remove the action attribute entirely
+                    3. Netlify will handle form submissions automatically
+                    
+                    Option 3: Keep current mailto (Limited functionality)
+                    - Works but opens email client (not all users have this configured)
+                    - Some browsers/devices may not support it well
+                -->
+                
+                <!-- 
+                ============================================
+                QUICK CHANGE GUIDE:
+                
+                BEFORE (Current):
+                <form class="contact-form" action="mailto:u.l.ndubuisi@gmail.com" method="post" enctype="text/plain">
+                
+                AFTER (With Formspree):
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                
+                Just replace YOUR_FORM_ID with the ID you get from Formspree!
+                ============================================
+                -->
+                
+                <!-- FORMSPREE VERSION (Uncomment and add your form ID when ready) -->
+                <!--
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                <!-- Success/Error Messages (Hidden by default, shown via JavaScript) -->
+                <div id="form-success" class="form-message success">
+                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">✅</span>
+                    Thank you! Your message has been sent successfully.
+                </div>
+                <div id="form-error" class="form-message error">
+                    <span style="font-size: 1.5rem; margin-right: 0.5rem;">❌</span>
+                    Oops! There was an error sending your message. Please try again.
+                </div>
+                -->
+                
+                <!-- NETLIFY VERSION (Uncomment if using Netlify) -->
+                <!--
+                <form class="contact-form" data-netlify="true" name="portfolio-contact">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                -->
+                
+                <!-- CURRENT VERSION (Using mailto - limited functionality) -->
+                <form class="contact-form" action="mailto:u.l.ndubuisi@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -1221,16 +1501,302 @@
     <footer>
         <p>&copy; 2024 Ugochi Ndubuisi. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://github.com/ugochi141" class="social-link">GitHub</a>
-            <a href="https://www.linkedin.com/in/ugochindubuisi" class="social-link">LinkedIn</a>
+            <a href="https://github.com/ugochi141" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/ugochindubuisi" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
             <a href="mailto:u.l.ndubuisi@gmail.com" class="social-link">Email</a>
         </div>
     </footer>
 
+    <!-- Project Modals -->
+    <div id="workflow-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('workflow-modal')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Core Laboratory Workflow Optimization</h2>
+                <div class="modal-tags">
+                    <span class="tag">Lean Six Sigma</span>
+                    <span class="tag">Epic Beaker</span>
+                    <span class="tag">Process Improvement</span>
+                    <span class="tag">Kaiser Permanente</span>
+                </div>
+            </div>
+            
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>Led a comprehensive laboratory automation initiative at Kaiser Permanente, focusing on streamlining sample processing workflows and integrating advanced healthcare technologies. This project transformed the core laboratory operations, resulting in significant improvements in efficiency and accuracy.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Key Achievements</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">30%</div>
+                        <div class="metric-label">Throughput Increase</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">Error Reduction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">15%</div>
+                        <div class="metric-label">TAT Improvement</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">30,000+</div>
+                        <div class="metric-label">Samples/Quarter</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Technical Implementation</h3>
+                <ul>
+                    <li>Integrated Epic Beaker CP/AP modules with existing laboratory information systems</li>
+                    <li>Implemented DI middleware for seamless data exchange between instruments and LIS</li>
+                    <li>Developed automated tracking systems for sample processing</li>
+                    <li>Created real-time performance monitoring dashboards using Power BI</li>
+                    <li>Established continuous quality improvement protocols based on Lean Six Sigma principles</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Methodologies Applied</h3>
+                <ul>
+                    <li><strong>DMAIC Framework:</strong> Define, Measure, Analyze, Improve, Control phases for systematic improvement</li>
+                    <li><strong>Value Stream Mapping:</strong> Identified and eliminated non-value-added activities</li>
+                    <li><strong>Root Cause Analysis:</strong> Used fishbone diagrams and 5-Why analysis for problem solving</li>
+                    <li><strong>Statistical Process Control:</strong> Implemented control charts for ongoing monitoring</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Impact & Outcomes</h3>
+                <p>This project not only improved operational metrics but also enhanced patient care by reducing turnaround times for critical test results. The standardized procedures and automated systems have become the model for other Kaiser Permanente facilities in the region.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="hematology-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('hematology-modal')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Hematology Section Enhancement Project</h2>
+                <div class="modal-tags">
+                    <span class="tag">Johns Hopkins</span>
+                    <span class="tag">Equipment Optimization</span>
+                    <span class="tag">Training Program</span>
+                    <span class="tag">Lean Project</span>
+                </div>
+            </div>
+            
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>As Hematology Technical Supervisor at Johns Hopkins Hospital, I spearheaded a Lean Six Sigma project to optimize Sysmex stainer cleaning procedures. This initiative addressed critical equipment maintenance challenges that were causing workflow disruptions and increasing operational costs.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Key Achievements</h3>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">30%</div>
+                        <div class="metric-label">Downtime Reduction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">2 Years</div>
+                        <div class="metric-label">Extended Lifespan</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">Process Time Saved</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Staff Compliance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Technical Innovation</h3>
+                <ul>
+                    <li>Introduced methanol-based cleaning protocol to prevent stain buildup</li>
+                    <li>Developed preventive maintenance schedule aligned with usage patterns</li>
+                    <li>Created automated reminder system for maintenance tasks</li>
+                    <li>Implemented quality checks at critical control points</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Training Program Development</h3>
+                <ul>
+                    <li><strong>Visual Training Aids:</strong> Created step-by-step pictorial guides for cleaning procedures</li>
+                    <li><strong>Competency Assessment:</strong> Developed checklist-based evaluation tools</li>
+                    <li><strong>Hands-on Sessions:</strong> Conducted practical training for all hematology staff</li>
+                    <li><strong>Documentation:</strong> Established SOPs with clear accountability measures</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Sustainability Measures</h3>
+                <p>Implemented monthly audits and refresher training sessions to ensure long-term adherence. The project's success led to its adoption across other laboratory sections, with similar equipment seeing comparable improvements in reliability and longevity.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="adhd-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('adhd-modal')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Gender-Based Issues in Late ADHD Diagnosis Research</h2>
+                <div class="modal-tags">
+                    <span class="tag">Health Sciences</span>
+                    <span class="tag">Qualitative Research</span>
+                    <span class="tag">GWU</span>
+                    <span class="tag">Phenomenological Study</span>
+                </div>
+            </div>
+            
+            <div class="modal-section">
+                <h3>Research Abstract</h3>
+                <p>This qualitative study explored the psychological and social impacts of late diagnosis of attention deficit hyperactivity disorder (ADHD) in adult women aged 18 and older. Utilizing in-depth interviews with 30 participants diagnosed after the age of 18, this research explored personal narratives to understand the barriers to early diagnosis and the subsequent effects on personal and professional life. Findings suggested that delayed diagnosis led to prolonged periods of mismanagement and significant emotional distress. Implications for clinical practice and policy reforms were discussed to enhance timely identification and support for women with ADHD.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Research Methodology</h3>
+                <ul>
+                    <li><strong>Study Design:</strong> Phenomenological qualitative approach</li>
+                    <li><strong>Sample Size:</strong> 30 adult women diagnosed with ADHD after age 18</li>
+                    <li><strong>Data Collection:</strong> Semi-structured in-depth interviews (60-90 minutes)</li>
+                    <li><strong>Analysis Method:</strong> Thematic analysis using NVivo software</li>
+                    <li><strong>Ethical Approval:</strong> George Washington University IRB</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Key Findings</h3>
+                <ul>
+                    <li>Gender bias in diagnostic criteria leading to underdiagnosis in females</li>
+                    <li>Masking behaviors developed by women to cope with undiagnosed symptoms</li>
+                    <li>Significant impact on academic and career trajectories</li>
+                    <li>Mental health comorbidities resulting from years of misdiagnosis</li>
+                    <li>Relief and validation experienced upon receiving diagnosis</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Clinical Implications</h3>
+                <ul>
+                    <li>Need for gender-sensitive diagnostic tools and criteria</li>
+                    <li>Importance of screening adult women presenting with anxiety/depression</li>
+                    <li>Training healthcare providers on female ADHD presentation</li>
+                    <li>Development of support systems for newly diagnosed adults</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Publication & Presentation</h3>
+                <p>This research was completed as part of my Doctorate in Health Sciences at George Washington University (2024). Findings have been presented at healthcare conferences and are being prepared for publication in peer-reviewed journals focusing on women's health and neurodevelopmental disorders.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+
+        // Form submission handling (for Formspree)
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            // If using Formspree, you can add success handling:
+            /*
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                // Submit form via AJAX (works with Formspree)
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        document.getElementById('form-success').style.display = 'block';
+                        document.getElementById('form-error').style.display = 'none';
+                        this.reset(); // Clear form
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            document.getElementById('form-success').style.display = 'none';
+                        }, 5000);
+                    } else {
+                        // Show error message
+                        document.getElementById('form-error').style.display = 'block';
+                        document.getElementById('form-success').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    // Show error message
+                    document.getElementById('form-error').style.display = 'block';
+                    document.getElementById('form-success').style.display = 'none';
+                })
+                .finally(() => {
+                    // Reset button
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                });
+            });
+            */
+        }
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                // Don't prevent default for modal triggers
+                if (this.getAttribute('onclick')) return;
+                
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1297,5 +1863,88 @@
             observer.observe(category);
         });
     </script>
+    
+    <!-- 
+    ============================================
+    QUICK SETUP GUIDE FOR FORMSPREE:
+    ============================================
+    
+    Step 1: Sign up for Formspree
+    - Go to https://formspree.io
+    - Click "Get Started" (free plan includes 50 submissions/month)
+    - Sign up with your email
+    
+    Step 2: Create Your Form
+    - Click "New Form" button
+    - Name it "Portfolio Contact" or similar
+    - You'll get a form endpoint that looks like this:
+      
+      https://formspree.io/f/mwkjvqrn
+                             ^^^^^^^^^ (This is your form ID)
+    
+    - The form ID is shown in 3 places:
+      * On the form's main page
+      * In the "Integration" tab
+      * In the example code they provide
+    
+    Step 3: Update Your Code
+    - Find the FORMSPREE VERSION section in the contact form above (around line 1100)
+    - Uncomment that version (remove the <!-- and --> around it)
+    - Replace YOUR_FORM_ID with your actual form ID
+    - Comment out or delete the CURRENT VERSION section
+    
+    Visual Guide:
+    ┌─────────────────────────────────────────────┐
+    │ 1. Comment out the current mailto version   │
+    │    <!-- (add this at the start)             │
+    │    <form action="mailto:...">               │
+    │    ...                                       │
+    │    </form>                                   │
+    │    --> (add this at the end)                │
+    │                                              │
+    │ 2. Uncomment the Formspree version          │
+    │    (remove <!-- and --> around it)          │
+    │                                              │
+    │ 3. Update the form ID                       │
+    │    FROM: action=".../f/YOUR_FORM_ID"        │
+    │    TO:   action=".../f/mwkjvqrn"            │
+    └─────────────────────────────────────────────┘
+    
+    Step 4: Test Your Form
+    - Save and upload your updated HTML to GitHub
+    - Wait a minute for GitHub Pages to update
+    - Visit your live site at https://ugochi141.github.io/
+    - Test the form by sending yourself a message:
+      * Name: Test User
+      * Email: your-email@gmail.com
+      * Message: This is a test message from my portfolio!
+    - Check your email for the submission (arrives within seconds)
+    - Also check Formspree dashboard to see the submission
+    - Note: Formspree won't work when testing locally (file://), only on live sites
+    
+    Step 5: Configure Formspree (Optional)
+    - In Formspree dashboard, you can:
+      * Set up email notifications
+      * Add reCAPTCHA for spam protection
+      * Configure auto-responses
+      * View all submissions
+    
+    BONUS: Enable AJAX Submission (No Page Redirect)
+    - Uncomment the JavaScript code in the "Form submission handling" section
+    - This will submit the form without redirecting away from your site
+    - Shows success/error messages directly on the page
+    
+    Note: Since you're using GitHub Pages, Formspree is the best option.
+    Netlify Forms only works if you host on Netlify.
+    
+    TROUBLESHOOTING:
+    - Form not working? Make sure you're testing on your live site, not locally
+    - Getting spam? Enable reCAPTCHA in Formspree settings
+    - Not receiving emails? Check your spam folder and Formspree dashboard
+    - Form redirecting to Formspree? Enable the AJAX code for seamless submission
+    
+    That's it! Your form will now reliably send emails without requiring users to have email clients configured.
+    ============================================
+    -->
 </body>
 </html>
