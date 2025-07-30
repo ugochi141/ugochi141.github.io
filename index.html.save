@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugochi Ndubuisi - Bioinformatics Developer & Healthcare Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ... (copy all the CSS from the previous message here) ... */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">UN.bio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#
+projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="dna-background"></div>
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Ugochi Ndubuisi</h1>
+                <p class="subtitle">Bioinformatics Developer & Healthcare Professional</p>
+                <p>Bridging the gap between healthcare and technology through innovative bioinformatics solutions.</p>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-dna"></i> NGS Analysis</span>
+                    <span class="badge"><i class="fas fa-laptop-code"></i> Python</span>
+                    <span class="badge"><i class="fas fa-database"></i> SQL</span>
+                    <span class="badge"><i class="fas fa-chart-bar"></i> Data Visualization</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-project-diagram"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
+                </div>
+            </div>
+            <div class="code-display float">
+                <pre><code><span class="keyword">def</span> <span class="function">analyze_variant</span>(variant):
+    <span class="comment"># Perform VEP analysis</span>
+    vep_result = run_vep(variant)
+    
+    <span class="comment"># Classify variant</span>
+    classification = classify_variant(vep_result)
+    
+    <span class="comment"># Generate report</span>
+    report = generate_report(classification)
+    
+    <span class="keyword">return</span> report
+
+<span class="comment"># Example usage</span>
+variant = <span class="string">"chr6:15241774 A>G"</span>
+report = analyze_variant(variant)
+print(report)</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects fade-in" id="projects">
+        <div class="section-container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- ... (copy the project cards from the previous message here) ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills fade-in" id="skills">
+        <div class="section-container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <!-- ... (copy the skill cards from the previous message here) ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Timeline -->
+    <section class="research fade-in" id="research">
+        <div class="section-container">
+            <h2 class="section-title">Research Journey</h2>
+            
+            <div class="research-timeline">
+                <!-- ... (copy the timeline items from the previous message here) ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Let's Collaborate</h2>
+            <p>Interested in bioinformatics projects, NGS analysis, or healthcare innovation?</p>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/ugochindubuisi" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ugochi141" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:u.l.ndubuisi@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ugochi Ndubuisi, DHSc, MT(AMT), MB(ASCP). All rights reserved.</p>
+    </footer>
+
+    <script>
+        // ... (copy the JavaScript from the previous message here) ...
+    </script>
+</body>
+</html>
