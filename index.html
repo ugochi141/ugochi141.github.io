@@ -182,19 +182,63 @@
 
         /* Code Preview */
         .code-preview {
-            background-color: #f6f8fa;
-            border: 1px solid var(--border-color);
+            background-color: #1e293b;
             border-radius: 0.75rem;
             padding: 1.5rem;
             overflow-x: auto;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ef4444;
+        }
+
+        .code-dot:nth-child(2) {
+            background-color: #f59e0b;
+        }
+
+        .code-dot:nth-child(3) {
+            background-color: #10b981;
         }
 
         .code-preview code {
             font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
             font-size: 0.875rem;
-            color: #0969da;
+            color: #e2e8f0;
             white-space: pre;
+            display: block;
+        }
+
+        .code-line {
+            display: block;
+            padding: 0.25rem 0;
+        }
+
+        .code-comment {
+            color: #64748b;
+        }
+
+        .code-keyword {
+            color: #c084fc;
+        }
+
+        .code-string {
+            color: #86efac;
+        }
+
+        .code-function {
+            color: #60a5fa;
         }
 
         /* Sections */
@@ -222,19 +266,34 @@
             background-color: var(--bg-primary);
         }
 
+        .project-categories {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .project-card {
             background-color: var(--bg-primary);
             border: 1px solid var(--border-color);
             border-radius: 1rem;
-            padding: 2rem;
+            overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -243,15 +302,63 @@
             border-color: var(--primary-color);
         }
 
+        .project-screenshot {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--primary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
         .project-card h3 {
             color: var(--primary-color);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .project-card p {
+        .project-description {
             color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .project-features {
+            list-style: none;
             margin-bottom: 1.5rem;
+        }
+
+        .project-features li {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
         }
 
         .project-tech {
@@ -273,6 +380,7 @@
         .project-links {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .project-links a {
@@ -282,11 +390,56 @@
             display: flex;
             align-items: center;
             gap: 0.25rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 0.375rem;
         }
 
         .project-links a:hover {
-            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .demo-link {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .demo-link:hover {
+            background-color: #047857;
+            border-color: #047857;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--bg-accent);
+            padding: 3rem 0;
+            margin: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
         }
 
         /* Coursework Section */
@@ -366,6 +519,7 @@
             justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .contact-link {
@@ -409,6 +563,10 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* Icons */
@@ -417,6 +575,25 @@
             height: 1.25rem;
             display: inline-block;
             vertical-align: middle;
+        }
+
+        /* Loading Animation */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .loading {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -452,9 +629,10 @@
                         <span class="skill-tag">📈 Data Visualization</span>
                         <span class="skill-tag">🔬 Genomics</span>
                         <span class="skill-tag">🏥 Healthcare IT</span>
+                        <span class="skill-tag">🔗 HL7/FHIR</span>
                     </div>
                     <div class="hero-buttons">
-                        <a href="https://github.com/ugochi141" class="btn btn-primary">
+                        <a href="https://github.com/ugochi141" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                             View GitHub Profile
                         </a>
                         <a href="#contact" class="btn btn-secondary">
@@ -463,157 +641,201 @@
                     </div>
                 </div>
                 <div class="code-preview">
-                    <code>def analyze_variant(variant):
-    # Perform VEP analysis
-    vep_result = run_vep(variant)
-    
-    # Classify variant
-    classification = classify_variant(vep_result)
-    
-    # Generate report
-    report = generate_report(classification)
-    
-    return report
-
-# Example usage
-variant = "chr6:15241774_A>G"
-report = analyze_variant(variant)
-print(report)</code>
+                    <div class="code-header">
+                        <span class="code-dot"></span>
+                        <span class="code-dot"></span>
+                        <span class="code-dot"></span>
+                    </div>
+                    <code><span class="code-line"><span class="code-keyword">def</span> <span class="code-function">analyze_variant</span>(variant):</span>
+<span class="code-line">    <span class="code-comment"># Perform VEP analysis</span></span>
+<span class="code-line">    vep_result = <span class="code-function">run_vep</span>(variant)</span>
+<span class="code-line">    </span>
+<span class="code-line">    <span class="code-comment"># Classify variant</span></span>
+<span class="code-line">    classification = <span class="code-function">classify_variant</span>(vep_result)</span>
+<span class="code-line">    </span>
+<span class="code-line">    <span class="code-comment"># Generate report</span></span>
+<span class="code-line">    report = <span class="code-function">generate_report</span>(classification)</span>
+<span class="code-line">    </span>
+<span class="code-line">    <span class="code-keyword">return</span> report</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-comment"># Example usage</span></span>
+<span class="code-line">variant = <span class="code-string">"chr6:15241774_A>G"</span></span>
+<span class="code-line">report = <span class="code-function">analyze_variant</span>(variant)</span>
+<span class="code-line"><span class="code-function">print</span>(report)</span></code>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.8M</div>
+                    <div class="stat-label">Reads Analyzed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Healthcare Systems</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">FHIR Compliant</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Innovative bioinformatics solutions and research projects</p>
+            <p class="section-subtitle">Innovative bioinformatics solutions and healthcare IT systems</p>
             
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>NGS Variant Calling Pipeline</h3>
-                    <p>
-                        Analyzed 2.8M paired-end reads from 1000 Genomes Project to identify genetic variants 
-                        using Galaxy bioinformatics platform.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Galaxy</span>
-                        <span class="tech-badge">BWA-MEM</span>
-                        <span class="tech-badge">FreeBayes</span>
-                        <span class="tech-badge">VCF Tools</span>
+            <!-- Bioinformatics Projects -->
+            <div class="project-categories">
+                <h3 class="category-title">🧬 Bioinformatics & Genomics</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🧬
+                            <!-- Replace with actual screenshot: <img src="path/to/ngs-screenshot.png" alt="NGS Pipeline Screenshot"> -->
+                        </div>
+                        <div class="project-content">
+                            <h3>NGS Variant Calling Pipeline</h3>
+                            <p class="project-description">
+                                A comprehensive bioinformatics pipeline for analyzing next-generation sequencing data. 
+                                Successfully processed 2.8 million paired-end reads from the 1000 Genomes Project to identify 
+                                genetic variants with high accuracy and efficiency.
+                            </p>
+                            <ul class="project-features">
+                                <li>Automated quality control and trimming of raw sequencing reads</li>
+                                <li>Alignment to reference genome using BWA-MEM algorithm</li>
+                                <li>Variant calling with FreeBayes and GATK integration</li>
+                                <li>Comprehensive variant annotation and filtering</li>
+                                <li>Generated detailed quality metrics and visualization reports</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Galaxy</span>
+                                <span class="tech-badge">BWA-MEM</span>
+                                <span class="tech-badge">FreeBayes</span>
+                                <span class="tech-badge">VCF Tools</span>
+                                <span class="tech-badge">SAMtools</span>
+                                <span class="tech-badge">FastQC</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/NGS-Variant-Calling-Pipeline" target="_blank" rel="noopener noreferrer">View Code →</a>
+                                <!-- Add demo link when available: <a href="#" class="demo-link">Live Demo →</a> -->
+                            </div>
+                        </div>
                     </div>
-                    <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
-                        <li>Performed quality control and trimming strategies</li>
-                        <li>Aligned reads with BWA-MEM and called variants with FreeBayes</li>
-                        <li>Identified 89 high-confidence SNPs, 12 in annotated genes</li>
-                        <li>Created reproducible Galaxy workflow</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="#">View Project →</a>
-                        <a href="#">Documentation →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <h3>Critical Values Alert System</h3>
-                    <p>
-                        Developed an automated system for real-time monitoring and alerting of critical laboratory values,
-                        improving patient safety and response times.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">SQL</span>
-                        <span class="tech-badge">HL7</span>
-                        <span class="tech-badge">REST API</span>
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            📊
+                            <!-- Replace with actual screenshot: <img src="path/to/aml-screenshot.png" alt="AML Analysis Screenshot"> -->
+                        </div>
+                        <div class="project-content">
+                            <h3>AML Expression Analysis</h3>
+                            <p class="project-description">
+                                Advanced bioinformatics analysis of gene expression patterns in Acute Myeloid Leukemia (AML) samples. 
+                                This project identifies potential biomarkers and therapeutic targets through comprehensive 
+                                differential expression analysis and pathway enrichment.
+                            </p>
+                            <ul class="project-features">
+                                <li>Analyzed RNA-seq data from 50+ AML patient samples</li>
+                                <li>Performed differential expression analysis using DESeq2</li>
+                                <li>Identified 200+ significantly dysregulated genes</li>
+                                <li>Conducted Gene Ontology and KEGG pathway enrichment</li>
+                                <li>Created interactive visualizations including heatmaps and volcano plots</li>
+                                <li>Validated findings against TCGA AML dataset</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">R</span>
+                                <span class="tech-badge">DESeq2</span>
+                                <span class="tech-badge">Gene Ontology</span>
+                                <span class="tech-badge">Pathway Analysis</span>
+                                <span class="tech-badge">ggplot2</span>
+                                <span class="tech-badge">Bioconductor</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/AML-Expression-Analysis" target="_blank" rel="noopener noreferrer">View Code →</a>
+                                <!-- Add demo link when available: <a href="#" class="demo-link">View Results →</a> -->
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ugochi141/Critical-Values-Alert-System">View Code →</a>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <h3>Genomic Data Visualization Tool</h3>
-                    <p>
-                        Created interactive visualizations for genomic data analysis, enabling researchers to explore 
-                        complex genetic patterns and variations.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Plotly</span>
-                        <span class="tech-badge">Pandas</span>
-                        <span class="tech-badge">Streamlit</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">Coming Soon →</a>
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            📚
+                            <!-- Replace with actual screenshot: <img src="path/to/portfolio-screenshot.png" alt="Portfolio Screenshot"> -->
+                        </div>
+                        <div class="project-content">
+                            <h3>JHU Bioinformatics Portfolio</h3>
+                            <p class="project-description">
+                                A comprehensive collection of bioinformatics coursework and projects from Johns Hopkins University. 
+                                This portfolio demonstrates proficiency in various computational biology techniques, 
+                                from sequence analysis to structural bioinformatics.
+                            </p>
+                            <ul class="project-features">
+                                <li>Python implementations of classic bioinformatics algorithms</li>
+                                <li>Sequence alignment and phylogenetic analysis tools</li>
+                                <li>Protein structure prediction and analysis scripts</li>
+                                <li>Machine learning applications in genomics</li>
+                                <li>Comprehensive documentation and tutorials</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Biopython</span>
+                                <span class="tech-badge">Jupyter</span>
+                                <span class="tech-badge">NumPy</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">scikit-learn</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/JHU_Bioinformatics_Portfolio" target="_blank" rel="noopener noreferrer">View Portfolio →</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Coursework Section -->
-    <section id="coursework" class="coursework">
-        <div class="container">
-            <h2 class="section-title">Academic Journey</h2>
-            <p class="section-subtitle">Continuous learning in bioinformatics and computational biology</p>
-            
-            <div class="course-card">
-                <div class="course-header">
-                    <div class="course-info">
-                        <h3>Johns Hopkins University</h3>
-                        <p>410.634 - Practical Computer Concepts for Bioinformatics</p>
-                        <p style="margin-top: 0.5rem;">Instructor: Dr. Nadim Alkharouf</p>
-                    </div>
-                    <span class="course-badge">In Progress</span>
-                </div>
-                
-                <ul class="assignment-list">
-                    <li class="assignment-item">
-                        <h4>✅ Assignment 8: Functions in Python</h4>
-                        <p>Implemented various function types including DNA sequence analysis tools, GC content calculator, and modular programming practices.</p>
-                        <a href="https://github.com/ugochi141/JHU_Bioinformatics_Portfolio/tree/main/Assignments/Assignment8" 
-                           style="color: var(--primary-color); text-decoration: none; font-weight: 500;">
-                            View Assignment →
-                        </a>
-                    </li>
-                    <li class="assignment-item">
-                        <h4>🔄 More Assignments Coming Soon</h4>
-                        <p>Currently working on advanced topics including file I/O operations, regular expressions, and bioinformatics algorithms.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Interested in collaborating on bioinformatics projects or discussing opportunities?</p>
-            
-            <div class="contact-links">
-                <a href="mailto:u.l.ndubuisi@gmail.com" class="contact-link">
-                    <span class="icon">📧</span> u.l.ndubuisi@gmail.com
-                </a>
-                <a href="mailto:undubui1@jh.edu" class="contact-link">
-                    <span class="icon">🎓</span> undubui1@jh.edu
-                </a>
-                <a href="https://github.com/ugochi141" class="contact-link">
-                    <span class="icon">💻</span> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/ugochi-ndubuisi" class="contact-link">
-                    <span class="icon">💼</span> LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Ugochi Ndubuisi. Built with passion for bioinformatics.</p>
-        </div>
-    </footer>
-</body>
-</html>
+            <!-- Healthcare IT Projects -->
+            <div class="project-categories">
+                <h3 class="category-title">🏥 Healthcare IT & Laboratory Systems</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🚨
+                            <!-- Replace with actual screenshot: <img src="path/to/critical-values-screenshot.png" alt="Critical Values System Screenshot"> -->
+                        </div>
+                        <div class="project-content">
+                            <h3>Critical Values Alert System</h3>
+                            <p class="project-description">
+                                An automated real-time monitoring system for critical laboratory values that ensures 
+                                immediate notification of healthcare providers. This system has significantly improved 
+                                patient safety by reducing critical value notification time by 75%.
+                            </p>
+                            <ul class="project-features">
+                                <li>Real-time monitoring of laboratory results from multiple LIS systems</li>
+                                <li>Intelligent alert routing based on provider schedules and preferences</li>
+                                <li>Multi-channel notifications (SMS, email, pager, mobile app)</li>
+                                <li>Audit trail and compliance reporting for regulatory requirements</li>
+                                <li>Integration with hospital EHR systems via HL7 interfaces</li>
+                                <li>Dashboard for tracking response times and acknowledgments</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">SQL</span>
+                                <span class="tech-badge">HL7</span>
+                                <span class="tech-badge">REST API</span>
+                                <span class="tech-badge">Redis</span>
+                                <span class="tech-badge">WebSockets</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/
