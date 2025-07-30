@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ugochi Ndubuisi - Bioinformatics Portfolio</title>
+    <title>Ugochi Ndubuisi - Laboratory Operations Manager & Bioinformatics Developer</title>
     <style>
         /* CSS Reset and Base Styles */
         * {
@@ -102,6 +102,13 @@
             color: var(--text-primary);
             margin-bottom: 1rem;
             line-height: 1.2;
+        }
+
+        .hero-text .credentials {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .hero-text .tagline {
@@ -261,9 +268,90 @@
             margin-bottom: 3rem;
         }
 
+        /* Experience Section */
+        .experience {
+            background-color: var(--bg-primary);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-content {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
         /* Projects Section */
         .projects {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-secondary);
         }
 
         .project-categories {
@@ -442,75 +530,138 @@
             font-size: 1.125rem;
         }
 
-        /* Coursework Section */
-        .coursework {
-            background-color: var(--bg-secondary);
+        /* Education Section */
+        .education {
+            background-color: var(--bg-primary);
         }
 
-        .course-card {
-            background: white;
-            border-radius: 1rem;
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background-color: var(--bg-secondary);
             padding: 2rem;
+            border-radius: 1rem;
             box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-        }
-
-        .course-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1.5rem;
-        }
-
-        .course-info h3 {
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .course-info p {
-            color: var(--text-secondary);
-        }
-
-        .course-badge {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-        }
-
-        .assignment-list {
-            list-style: none;
-        }
-
-        .assignment-item {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background-color: var(--bg-secondary);
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--primary-color);
             transition: all 0.3s ease;
         }
 
-        .assignment-item:hover {
-            background-color: var(--bg-accent);
-            transform: translateX(5px);
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .assignment-item h4 {
-            color: var(--text-primary);
+        .education-card h3 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
 
-        .assignment-item p {
+        .education-card .institution {
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .date {
             color: var(--text-secondary);
             font-size: 0.875rem;
         }
 
+        /* Certifications Section */
+        .certifications {
+            background-color: var(--bg-secondary);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background-color: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-card h4 {
+            color: var(--primary-color);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .issuer {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-card .year {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--bg-primary);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
         /* Contact Section */
         .contact {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-secondary);
             text-align: center;
         }
 
@@ -604,8 +755,11 @@
             <div class="nav-brand">UN</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#coursework">Coursework</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -617,19 +771,27 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Ugochi Ndubuisi</h1>
-                    <p class="tagline">Bioinformatics Developer & Healthcare Professional</p>
+                    <p class="credentials">DHSc, MT(AMT), MB(ASCP)</p>
+                    <p class="tagline">Laboratory Operations Manager @ Kaiser Permanente</p>
                     <p class="description">
-                        Bridging the gap between healthcare and technology through innovative bioinformatics solutions. 
-                        Passionate about leveraging computational methods to advance genomic research and personalized medicine.
+                        Seasoned Laboratory Manager with over ten years of experience in high-complexity testing, 
+                        meticulous quality control, and laboratory management. Demonstrated proficiency in troubleshooting 
+                        complex laboratory issues, ensuring compliance with CLIA, HIPAA, and OSHA regulations. 
+                        Currently pursuing MS in Biotechnology at Johns Hopkins University, specializing in bioinformatics 
+                        and computational genomics.
                     </p>
                     <div class="skills-tags">
                         <span class="skill-tag">🧬 NGS Analysis</span>
                         <span class="skill-tag">💻 Python</span>
                         <span class="skill-tag">📊 SQL</span>
+                        <span class="skill-tag">🧪 LIS/LIMS</span>
                         <span class="skill-tag">📈 Data Visualization</span>
                         <span class="skill-tag">🔬 Genomics</span>
                         <span class="skill-tag">🏥 Healthcare IT</span>
                         <span class="skill-tag">🔗 HL7/FHIR</span>
+                        <span class="skill-tag">📋 Lean Six Sigma</span>
+                        <span class="skill-tag">🔧 Lab Automation</span>
+                        <span class="skill-tag">🧫 PCR/ELISA</span>
                     </div>
                     <div class="hero-buttons">
                         <a href="https://github.com/ugochi141" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -646,22 +808,21 @@
                         <span class="code-dot"></span>
                         <span class="code-dot"></span>
                     </div>
-                    <code><span class="code-line"><span class="code-keyword">def</span> <span class="code-function">analyze_variant</span>(variant):</span>
-<span class="code-line">    <span class="code-comment"># Perform VEP analysis</span></span>
-<span class="code-line">    vep_result = <span class="code-function">run_vep</span>(variant)</span>
-<span class="code-line">    </span>
-<span class="code-line">    <span class="code-comment"># Classify variant</span></span>
-<span class="code-line">    classification = <span class="code-function">classify_variant</span>(vep_result)</span>
-<span class="code-line">    </span>
-<span class="code-line">    <span class="code-comment"># Generate report</span></span>
-<span class="code-line">    report = <span class="code-function">generate_report</span>(classification)</span>
-<span class="code-line">    </span>
-<span class="code-line">    <span class="code-keyword">return</span> report</span>
+                    <code><span class="code-line"><span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd</span>
+<span class="code-line"><span class="code-keyword">from</span> Bio <span class="code-keyword">import</span> SeqIO</span>
+<span class="code-line"><span class="code-keyword">import</span> matplotlib.pyplot <span class="code-keyword">as</span> plt</span>
 <span class="code-line"></span>
-<span class="code-line"><span class="code-comment"># Example usage</span></span>
-<span class="code-line">variant = <span class="code-string">"chr6:15241774_A>G"</span></span>
-<span class="code-line">report = <span class="code-function">analyze_variant</span>(variant)</span>
-<span class="code-line"><span class="code-function">print</span>(report)</span></code>
+<span class="code-line"><span class="code-keyword">def</span> <span class="code-function">analyze_clinical_variants</span>(vcf_file, vep_data):</span>
+<span class="code-line">    <span class="code-string">"""Analyze clinical significance of genetic variants"""</span></span>
+<span class="code-line">    variants = pd.read_csv(vcf_file, sep=<span class="code-string">'\t'</span>)</span>
+<span class="code-line">    </span>
+<span class="code-line">    <span class="code-comment"># Filter for pathogenic variants</span></span>
+<span class="code-line">    pathogenic = variants[variants[<span class="code-string">'CLNSIG'</span>] == <span class="code-string">'Pathogenic'</span>]</span>
+<span class="code-line">    </span>
+<span class="code-line">    <span class="code-comment"># Generate clinical report</span></span>
+<span class="code-line">    report = generate_clinical_report(pathogenic, vep_data)</span>
+<span class="code-line">    </span>
+<span class="code-line">    <span class="code-keyword">return</span> report</span></code>
                 </div>
             </div>
         </div>
@@ -672,170 +833,68 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Healthcare Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">2.8M</div>
-                    <div class="stat-label">Reads Analyzed</div>
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Daily Samples Processed</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Healthcare Systems</div>
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Accuracy Rate</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">FHIR Compliant</div>
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Efficiency Improvement</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Innovative bioinformatics solutions and healthcare IT systems</p>
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">Transforming laboratory operations through innovation and leadership</p>
             
-            <!-- Bioinformatics Projects -->
-            <div class="project-categories">
-                <h3 class="category-title">🧬 Bioinformatics & Genomics</h3>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-screenshot">
-                            🧬
-                            <!-- Replace with actual screenshot: <img src="path/to/ngs-screenshot.png" alt="NGS Pipeline Screenshot"> -->
-                        </div>
-                        <div class="project-content">
-                            <h3>NGS Variant Calling Pipeline</h3>
-                            <p class="project-description">
-                                A comprehensive bioinformatics pipeline for analyzing next-generation sequencing data. 
-                                Successfully processed 2.8 million paired-end reads from the 1000 Genomes Project to identify 
-                                genetic variants with high accuracy and efficiency.
-                            </p>
-                            <ul class="project-features">
-                                <li>Automated quality control and trimming of raw sequencing reads</li>
-                                <li>Alignment to reference genome using BWA-MEM algorithm</li>
-                                <li>Variant calling with FreeBayes and GATK integration</li>
-                                <li>Comprehensive variant annotation and filtering</li>
-                                <li>Generated detailed quality metrics and visualization reports</li>
-                            </ul>
-                            <div class="project-tech">
-                                <span class="tech-badge">Galaxy</span>
-                                <span class="tech-badge">BWA-MEM</span>
-                                <span class="tech-badge">FreeBayes</span>
-                                <span class="tech-badge">VCF Tools</span>
-                                <span class="tech-badge">SAMtools</span>
-                                <span class="tech-badge">FastQC</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/ugochi141/NGS-Variant-Calling-Pipeline" target="_blank" rel="noopener noreferrer">View Code →</a>
-                                <!-- Add demo link when available: <a href="#" class="demo-link">Live Demo →</a> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-screenshot">
-                            📊
-                            <!-- Replace with actual screenshot: <img src="path/to/aml-screenshot.png" alt="AML Analysis Screenshot"> -->
-                        </div>
-                        <div class="project-content">
-                            <h3>AML Expression Analysis</h3>
-                            <p class="project-description">
-                                Advanced bioinformatics analysis of gene expression patterns in Acute Myeloid Leukemia (AML) samples. 
-                                This project identifies potential biomarkers and therapeutic targets through comprehensive 
-                                differential expression analysis and pathway enrichment.
-                            </p>
-                            <ul class="project-features">
-                                <li>Analyzed RNA-seq data from 50+ AML patient samples</li>
-                                <li>Performed differential expression analysis using DESeq2</li>
-                                <li>Identified 200+ significantly dysregulated genes</li>
-                                <li>Conducted Gene Ontology and KEGG pathway enrichment</li>
-                                <li>Created interactive visualizations including heatmaps and volcano plots</li>
-                                <li>Validated findings against TCGA AML dataset</li>
-                            </ul>
-                            <div class="project-tech">
-                                <span class="tech-badge">R</span>
-                                <span class="tech-badge">DESeq2</span>
-                                <span class="tech-badge">Gene Ontology</span>
-                                <span class="tech-badge">Pathway Analysis</span>
-                                <span class="tech-badge">ggplot2</span>
-                                <span class="tech-badge">Bioconductor</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/ugochi141/AML-Expression-Analysis" target="_blank" rel="noopener noreferrer">View Code →</a>
-                                <!-- Add demo link when available: <a href="#" class="demo-link">View Results →</a> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-screenshot">
-                            📚
-                            <!-- Replace with actual screenshot: <img src="path/to/portfolio-screenshot.png" alt="Portfolio Screenshot"> -->
-                        </div>
-                        <div class="project-content">
-                            <h3>JHU Bioinformatics Portfolio</h3>
-                            <p class="project-description">
-                                A comprehensive collection of bioinformatics coursework and projects from Johns Hopkins University. 
-                                This portfolio demonstrates proficiency in various computational biology techniques, 
-                                from sequence analysis to structural bioinformatics.
-                            </p>
-                            <ul class="project-features">
-                                <li>Python implementations of classic bioinformatics algorithms</li>
-                                <li>Sequence alignment and phylogenetic analysis tools</li>
-                                <li>Protein structure prediction and analysis scripts</li>
-                                <li>Machine learning applications in genomics</li>
-                                <li>Comprehensive documentation and tutorials</li>
-                            </ul>
-                            <div class="project-tech">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Biopython</span>
-                                <span class="tech-badge">Jupyter</span>
-                                <span class="tech-badge">NumPy</span>
-                                <span class="tech-badge">Pandas</span>
-                                <span class="tech-badge">scikit-learn</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/ugochi141/JHU_Bioinformatics_Portfolio" target="_blank" rel="noopener noreferrer">View Portfolio →</a>
-                            </div>
-                        </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Laboratory Operations Manager</h3>
+                        <p class="company">Kaiser Permanente</p>
+                        <p class="date">January 2025 - Present | Largo, Maryland</p>
+                        <ul>
+                            <li>Oversee daily laboratory operations, ensuring efficient workflow and adherence to safety protocols</li>
+                            <li>Manage inventory of lab supplies and equipment, implementing cost-effective procurement strategies</li>
+                            <li>Develop and maintain standard operating procedures (SOPs) to enhance lab productivity and consistency</li>
+                            <li>Coordinate maintenance schedules for laboratory instruments, minimizing downtime and optimizing performance</li>
+                            <li>Supervise and mentor laboratory staff, providing training on new techniques and equipment</li>
+                            <li>Collaborate with research teams to align lab resources with project requirements and timelines</li>
+                            <li>Ensure compliance with regulatory standards, including OSHA, EPA, and GLP guidelines</li>
+                            <li>Implement quality control measures to maintain the integrity of research data and experimental results</li>
+                            <li>Conduct regular safety audits and risk assessments, addressing potential hazards promptly</li>
+                            <li>Liaise with external vendors and service providers to maintain equipment and source specialized materials</li>
+                            <li>Manage lab budget, tracking expenses and identifying areas for cost optimization</li>
+                            <li>Coordinate with IT department to integrate laboratory information management systems (LIMS)</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
 
-            <!-- Healthcare IT Projects -->
-            <div class="project-categories">
-                <h3 class="category-title">🏥 Healthcare IT & Laboratory Systems</h3>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-screenshot">
-                            🚨
-                            <!-- Replace with actual screenshot: <img src="path/to/critical-values-screenshot.png" alt="Critical Values System Screenshot"> -->
-                        </div>
-                        <div class="project-content">
-                            <h3>Critical Values Alert System</h3>
-                            <p class="project-description">
-                                An automated real-time monitoring system for critical laboratory values that ensures 
-                                immediate notification of healthcare providers. This system has significantly improved 
-                                patient safety by reducing critical value notification time by 75%.
-                            </p>
-                            <ul class="project-features">
-                                <li>Real-time monitoring of laboratory results from multiple LIS systems</li>
-                                <li>Intelligent alert routing based on provider schedules and preferences</li>
-                                <li>Multi-channel notifications (SMS, email, pager, mobile app)</li>
-                                <li>Audit trail and compliance reporting for regulatory requirements</li>
-                                <li>Integration with hospital EHR systems via HL7 interfaces</li>
-                                <li>Dashboard for tracking response times and acknowledgments</li>
-                            </ul>
-                            <div class="project-tech">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">SQL</span>
-                                <span class="tech-badge">HL7</span>
-                                <span class="tech-badge">REST API</span>
-                                <span class="tech-badge">Redis</span>
-                                <span class="tech-badge">WebSockets</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Clinical Laboratory Scientist III (Hematology Technical Supervisor)</h3>
+                        <p class="company">Johns Hopkins University Hospital</p>
+                        <p class="date">April 2024 - January 2025 | Baltimore, MD</p>
+                        <ul>
+                            <li>Implemented advanced hematology techniques and routine blood tests, ensuring compliance with CAP and CLIA regulations, leading to a 15% improvement in diagnostic accuracy and a 25% reduction in turnaround time</li>
+                            <li>Directed the hematology laboratory team in daily operations, ensuring efficient processing and analysis of 2000+ samples per day</li>
+                            <li>Led team of 10 laboratory technologists in executing complex hematological assays, achieving a 20% improvement in test accuracy</li>
+                            <li>Spearheaded implementation of advanced hematology diagnostic equipment, resulting in a 25% increase in testing accuracy</li>
+                            <li>Directed team of five laboratory scientists utilizing advanced statistics to analyze over 2000 hematology test results monthly</li>
+                            <li>Reduced error rate by 15% through integration of automated data analysis tools and compliance with industry KPIs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
