@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Ugochi Ndubuisi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .resume-container {
+            max-width: 900px;
+            margin: 6rem auto 2rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 2rem;
+        }
+        
+        .resume-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-header .credentials {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .job {
+            margin-bottom: 2rem;
+        }
+        
+        .job-header {
+            margin-bottom: 0.75rem;
+        }
+        
+        .job-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+        
+        .company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .date-location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        
+        .job ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .job li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .job li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .education-item, .cert-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-item h3, .cert-item h3 {
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .institution, .issuer {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-category li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .skill-category li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container { 
+                padding: 2rem 1.5rem; 
+                margin: 5rem 1rem 2rem;
+            }
+            .contact-info { 
+                flex-direction: column; 
+                gap: 0.5rem;
+            }
+            .skills-grid { 
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">UN</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1>Ugochi Ndubuisi</h1>
+            <p class="credentials">DHSc, MT(AMT), MB(ASCP)</p>
+            <div class="contact-info">
+                <span>📧 u.l.ndubuisi@gmail.com</span>
+                <span>📧 undubui1@jh.edu</span>
+                <span>📍 Maryland, United States</span>
+                <span>💼 LinkedIn: ugochindubuisi</span>
+            </div>
+            <a href="#" class="download-btn" onclick="window.print()">
+                📄 Download PDF
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>SUMMARY</h2>
+            <p>Seasoned Laboratory Manager with over ten years of experience in high-complexity testing, meticulous quality control, and laboratory management. Demonstrated proficiency in troubleshooting complex laboratory issues, ensuring compliance with CLIA, HIPAA, and OSHA regulations. Skilled in LIS data entry and reporting, with a commitment to maintaining stringent turnaround times for critical test results. Proven track record in enhancing laboratory efficiency, implementing state-of-the-art technologies, and contributing to improved patient care through accurate diagnostics.</p>
+        </div>
+
+        <div class="section">
+            <h2>EXPERIENCE</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Laboratory Operation Manager</div>
+                    <div class="company">Kaiser Permanente</div>
+                    <div class="date-location">January 2025 - Present, Largo, Maryland</div>
+                </div>
+                <ul>
+                    <li>Oversee daily laboratory operations, ensuring efficient workflow and adherence to safety protocols</li>
+                    <li>Manage inventory of lab supplies and equipment, implementing cost-effective procurement strategies</li>
+                    <li>Develop and maintain standard operating procedures (SOPs) to enhance lab productivity and consistency</li>
+                    <li>Coordinate maintenance schedules for laboratory instruments, minimizing downtime and optimizing performance</li>
+                    <li>Supervise and mentor laboratory staff, providing training on new techniques and equipment</li>
+                    <li>Collaborate with research teams to align lab resources with project requirements and timelines</li>
+                    <li>Ensure compliance with regulatory standards, including OSHA, EPA, and GLP guidelines</li>
+                    <li>Implement quality control measures to maintain the integrity of research data and experimental results</li>
+                    <li>Conduct regular safety audits and risk assessments, addressing potential hazards promptly</li>
+                    <li>Liaise with external vendors and service providers to maintain equipment and source specialized materials</li>
+                    <li>Manage lab budget, tracking expenses and identifying areas for cost optimization</li>
+                    <li>Coordinate with IT department to integrate laboratory information management systems (LIMS)</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Clinical Laboratory Scientist III (Hematology Technical Supervisor)</div>
+                    <div class="company">Johns Hopkins University Hospital</div>
+                    <div class="date-location">April 2024 - January 2025, Baltimore, MD</div>
+                </div>
+                <ul>
+                    <li>Implemented advanced hematology techniques and routine blood tests, ensuring compliance with CAP and CLIA regulations, leading to a 15% improvement in diagnostic accuracy and a 25% reduction in turnaround time for test results</li>
+                    <li>Directed the hematology laboratory team in daily operations, ensuring the efficient processing and analysis of 2000+ samples per day using automated and manual techniques, which led to a 20% improvement in test turnaround time</li>
+                    <li>Led team of 10 laboratory technologists in executing complex hematological assays, achieving a 20% improvement in test accuracy and a 15% reduction in turnaround time by implementing advanced diagnostic technologies and rigorous quality control procedures</li>
+                    <li>Spearheaded the implementation of advanced hematology diagnostic equipment, resulting in a 25% increase in testing accuracy and a 15% reduction in sample processing time. Managed a team of 5 technologists, ensuring compliance with CAP and CLIA standards</li>
+                    <li>Directed a team of five laboratory scientists in utilizing advanced statistics to analyze over 2000 hematology test results per month, reducing error rate by 15% through the integration of automated data analysis tools and compliance with industry KPIs</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Medical Technologist (Technical Supervisor)</div>
+                    <div class="company">Riverside Regional Medical Center</div>
+                    <div class="date-location">April 2023 - February 2024, Newport News, VA</div>
+                </div>
+                <ul>
+                    <li>Supervised and trained a team of 15 laboratory technicians, ensuring adherence to quality control protocols and regulatory compliance, leading to a 25% increase in testing accuracy and a 20% reduction in turnaround time for patient results</li>
+                    <li>Directed a team of 12 laboratory technologists, ensuring quality control and regulatory compliance, which increased sample processing accuracy by 15% and decreased turnaround time by 20%</li>
+                    <li>Implemented a new laboratory information system, reducing test result turnaround times by 25% and increasing data accuracy by integrating advanced software tools and ensuring thorough staff training</li>
+                    <li>Enhanced workflow efficiency by 25% through the implementation of automation tools and rigorous quality control protocols, ensuring compliance with CLIA and CAP standards</li>
+                    <li>Led weekly laboratory meetings to review workflow efficiencies and quality control measures, resulting in a 15% improvement in turnaround times for diagnostic tests within six months</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Travel Medical Technologist</div>
+                    <div class="company">AMN Healthcare</div>
+                    <div class="date-location">March 2022 - July 2023</div>
+                </div>
+                <ul>
+                    <li>Conducted and analyzed high-complexity laboratory tests across multiple facilities, demonstrating independent judgment and achieving a 97.5% accuracy rate</li>
+                    <li>Ensured quality control and compliance with laboratory policies and procedures, actively participating in troubleshooting and instrument maintenance</li>
+                    <li>Managed LIS entries and ensured the accuracy of test results reports for critical patient diagnostics</li>
+                    <li>Conducted diagnostic testing and analysis for over 150 patients weekly across multiple facilities, maintaining a 99% accuracy rate, while adapting to diverse healthcare environments and protocols</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Laboratory Technologist</div>
+                    <div class="company">LifeNet Health</div>
+                    <div class="date-location">August 2021 - March 2022, Virginia Beach, VA</div>
+                </div>
+                <ul>
+                    <li>Conducted over 2,500 diagnostic tests annually, utilizing advanced laboratory equipment and maintaining a 96% accuracy rate in test results while adhering strictly to safety protocols and regulatory standards</li>
+                    <li>Performed complex serological and immunological tests on 500+ patient samples monthly, ensuring a 98% accuracy rate through precise adherence to testing protocols and use of advanced diagnostic equipment</li>
+                    <li>Utilized ELISA and PCR techniques to ensure accurate results, achieving a 98% success rate in the identification of pathogens and antibodies</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Medical Technician (Team Lead in Hematology)</div>
+                    <div class="company">Naval Medical Center</div>
+                    <div class="date-location">April 2019 - July 2021, Portsmouth, VA</div>
+                </div>
+                <ul>
+                    <li>Supervised and trained a team of 8 technicians, enhancing laboratory efficiency by 25% through the implementation of new diagnostic procedures and the utilization of advanced medical equipment</li>
+                    <li>Led team in conducting over 5,000 annual hematological tests, improving diagnostic accuracy by 15% through the implementation of advanced laboratory equipment and rigorous quality control protocols</li>
+                    <li>Implemented a new laboratory workflow that increased blood sample processing efficiency by 25%, ensuring accurate results and timely reporting using advanced hematology analyzers and LIS</li>
+                    <li>Spearheaded team in conducting over 3,000 hematology tests monthly, improving diagnostic accuracy by implementing advanced laboratory procedures and ensuring compliance with CAP and CLIA standards</li>
+                    <li>Implemented MedicaLab for continuous competency assessments, reducing training-related errors by 25% over six months and ensuring compliance with regulatory standards</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>PROJECTS</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Optimizing Workflow to Improve Turnaround Time of Core Laboratory</div>
+                    <div class="company">Kaiser Permanente</div>
+                </div>
+                <ul>
+                    <li>Streamlined sample processing in the Core Laboratory by integrating Lean Six Sigma methodologies, boosting efficiency, minimizing handling errors, and elevating overall turnaround time performance</li>
+                    <li>Orchestrated end-to-end workflow optimization initiatives utilizing data-driven analysis and industry best practices to enhance processing speed, mitigate bottlenecks, and elevate laboratory turnaround time outcomes</li>
+                    <li>Revamped laboratory workflow by instituting automated tracking systems and harmonizing procedural steps, facilitating measurable gains in processing velocity and consistency across critical operational touchpoints</li>
+                    <li>Redesigned cross-departmental collaboration protocols by integrating advanced digital communication tools, fostering seamless coordination, and driving measurable improvements in laboratory turnaround metrics</li>
+                    <li>Instituted continuous performance monitoring dashboards, enabling proactive identification of workflow inefficiencies and empowering targeted process interventions to further accelerate laboratory turnaround achievements</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Optimizing Workflow and Training in the Hematology Section</div>
+                    <div class="company">Johns Hopkins Hospital • April 2024 – December 2024</div>
+                </div>
+                <ul>
+                    <li>Revamped workflow and training protocols in the Hematology section, reducing processing time by 25% and increasing staff competency through targeted training sessions using Lean Six Sigma methodologies</li>
+                    <li>Led a Lean project to optimize Sysmex stainer cleaning procedures in the hematology section</li>
+                    <li>Implemented the use of methanol in the cleaning process to prevent stain buildup and reduce machine damage</li>
+                    <li>Resulted in a 30% reduction in maintenance downtime and extended equipment lifespan by an estimated 2 years</li>
+                    <li>Developed and implemented a standardized training program for the new cleaning procedure, ensuring consistent application across the team</li>
+                    <li>Created visual aids and step-by-step guides to support the new process, improving staff adherence and reducing errors</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Exploring Gender-Based Issues Associated with Late-Diagnosis of Attention Deficit Hyperactivity Disorder in Women: A Phenomenological Study</div>
+                    <div class="company">Department of Health, Human Function, and Rehabilitation Sciences, George Washington University • August 2023 - August 2024</div>
+                </div>
+                <ul>
+                    <li>Abstract: This qualitative study explored the psychological and social impacts of late diagnosis of attention deficit hyperactivity disorder (ADHD) in adult women aged 18 and older. Utilizing in-depth interviews with 30 participants diagnosed after the age of 18, this research explored personal narratives to understand the barriers to early diagnosis and the subsequent effects on personal and professional life. Findings suggested that delayed diagnosis led to prolonged periods of mismanagement and significant emotional distress. Implications for clinical practice and policy reforms were discussed to enhance timely identification and support for women with ADHD.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>EDUCATION</h2>
+            
+            <div class="education-item">
+                <h3>Masters of Science in Biotechnology</h3>
+                <div class="institution">Johns Hopkins University • 2026</div>
+            </div>
+            
+            <div class="education-item">
+                <h3>Doctorate in Health Sciences</h3>
+                <div class="institution">The George Washington University • Washington, D.C. • 2024</div>
+            </div>
+            
+            <div class="education-item">
+                <h3>Masters in Public Health</h3>
+                <div class="institution">Old Dominion University • Norfolk, VA • 2017</div>
+            </div>
+            
+            <div class="education-item">
+                <h3>Bachelor of Science in Microbiology</h3>
+                <div class="institution">University of Rochester • Rochester, NY • 2014</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>CERTIFICATIONS</h2>
+            
+            <div class="cert-item">
+                <h3>Nationally Certified Medical Technologist</h3>
+                <div class="issuer">American Medical Technologists • 2025</div>
+            </div>
+            
+            <div class="cert-item">
+                <h3>Asynchronous Lean Practitioner for Healthcare</h3>
+                <div class="issuer">Johns Hopkins Armstrong Institute for Patient Safety and Quality • 2024</div>
+            </div>
+            
+            <div class="cert-item">
+                <h3>Nationally Certified Technologist in Molecular Biology</h3>
+                <div class="issuer">American Society of Clinical Pathology • 2025</div>
+            </div>
+            
+            <div class="cert-item">
+                <h3>Lean Six Sigma Green Belt</h3>
+                <div class="issuer">Johns Hopkins Armstrong Institute for Patient Safety and Quality • 2024</div>
+            </div>
+            
+            <div class="cert-item">
+                <h3>Certificate in Molecular Diagnostics</h3>
+                <div class="issuer">Old Dominion University • 2019</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Laboratory Operations</h3>
+                    <ul>
+                        <li>Quality control procedures and documentation</li>
+                        <li>Training and competency assessments</li>
+                        <li>Advanced proficiency with LIS and LIMS</li>
+                        <li>High-throughput laboratory equipment operation</li>
+                        <li>PCR, ELISA, and chromatography techniques</li>
+                        <li>Regulatory compliance and safety standards</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Microsoft Office Suite for data analysis</li>
+                        <li>Python programming for bioinformatics</li>
+                        <li>SQL database management</li>
+                        <li>Statistical analysis and reporting</li>
+                        <li>Data visualization tools</li>
+                        <li>Epic Beaker system administration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add print styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @media print {
+                .nav-container, .download-btn { display: none !important; }
+                .resume-container { 
+                    margin: 0; 
+                    box-shadow: none; 
+                    padding: 1rem;
+                    max-width: none;
+                }
+                body { background: white !important; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

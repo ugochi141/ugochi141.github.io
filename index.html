@@ -648,6 +648,123 @@
             font-weight: bold;
         }
 
+        /* About Section */
+        .about {
+            background-color: var(--bg-primary);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .about-intro {
+            margin-bottom: 3rem;
+        }
+
+        .about-intro h3 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .about-intro p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .values-section {
+            margin-bottom: 3rem;
+        }
+
+        .values-section h3 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .value-item {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-item h4 {
+            color: var(--primary-color);
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .personality-section {
+            margin-bottom: 2rem;
+        }
+
+        .personality-section h3 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .personality-section p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .interests-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .interest-badge {
+            background-color: var(--bg-accent);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .interest-badge:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
         /* Contact Section */
         .contact {
             background-color: var(--bg-secondary);
@@ -730,11 +847,10 @@
             <div class="nav-brand">UN</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="resume.html">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -799,6 +915,79 @@
 <span class="code-line">    report = generate_clinical_report(pathogenic, vep_data)</span>
 <span class="code-line">    </span>
 <span class="code-line">    <span class="code-keyword">return</span> report</span></code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <h3>My Journey</h3>
+                        <p>
+                            With over ten years of experience in healthcare laboratory management, I've dedicated my career to 
+                            improving patient care through innovative laboratory operations and cutting-edge bioinformatics. 
+                            My journey began with a Bachelor's in Microbiology from the University of Rochester, and I've 
+                            continuously evolved my expertise through advanced degrees and certifications.
+                        </p>
+                        <p>
+                            Currently pursuing my Master of Science in Biotechnology at Johns Hopkins University, 
+                            I specialize in computational genomics and bioinformatics while serving as Laboratory Operations Manager 
+                            at Kaiser Permanente. My unique combination of clinical laboratory expertise and computational skills 
+                            allows me to bridge the gap between traditional lab operations and modern data-driven healthcare.
+                        </p>
+                    </div>
+                    
+                    <div class="values-section">
+                        <h3>Values & Philosophy</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <h4>💪 Hard Work</h4>
+                                <p>I believe in the power of dedicated effort and continuous improvement. Every challenge is an opportunity to grow and excel.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>📚 Forever Learner</h4>
+                                <p>The healthcare and technology landscape is constantly evolving. I'm committed to lifelong learning and staying at the forefront of innovation.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>🎯 Excellence</h4>
+                                <p>Quality and precision are non-negotiable in healthcare. I strive for excellence in every project and operational process.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>🤝 Collaboration</h4>
+                                <p>The best outcomes come from working together. I value teamwork, mentorship, and knowledge sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="personality-section">
+                        <h3>Beyond the Lab</h3>
+                        <p>
+                            When I'm not optimizing laboratory workflows or analyzing genomic data, you'll find me indulging 
+                            in my passions as a self-proclaimed nerd! I'm a huge comic book enthusiast who loves exploring 
+                            the rich storytelling and artistry of both classic and modern comics. My love for martial arts 
+                            keeps me disciplined and focused, teaching me valuable lessons about perseverance and mental strength 
+                            that I apply to my professional life.
+                        </p>
+                        <p>
+                            I'm also passionate about the great outdoors – whether it's hiking through scenic trails, 
+                            camping under the stars, or simply enjoying nature's tranquility. These outdoor adventures 
+                            provide the perfect balance to my data-driven work life and help me maintain perspective 
+                            and creativity in problem-solving.
+                        </p>
+                        
+                        <div class="interests-badges">
+                            <span class="interest-badge">📚 Comic Books</span>
+                            <span class="interest-badge">🥋 Martial Arts</span>
+                            <span class="interest-badge">🏕️ Hiking</span>
+                            <span class="interest-badge">⛺ Camping</span>
+                            <span class="interest-badge">🌲 Nature Photography</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -936,83 +1125,325 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Innovative solutions in laboratory optimization and healthcare research</p>
+            <p class="section-subtitle">Innovative solutions in laboratory systems, bioinformatics, and healthcare research</p>
             
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-screenshot">
-                        ⚡
+            <!-- Healthcare Laboratory Systems -->
+            <div class="project-categories">
+                <h3 class="category-title">🏥 Healthcare Laboratory Systems</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🔬
+                        </div>
+                        <div class="project-content">
+                            <h3>HL7 Lab Results Pipeline</h3>
+                            <p class="project-description">
+                                Production-ready pipeline for processing HL7 v2.x lab result messages with Epic Beaker/Cerner support and critical value alerts.
+                            </p>
+                            <ul class="project-features">
+                                <li>Production-grade HL7 v2.x message parsing and validation</li>
+                                <li>Epic Beaker and Cerner system integration</li>
+                                <li>Critical value detection and alerting system</li>
+                                <li>Comprehensive error handling and logging</li>
+                                <li>HIPAA-compliant data processing</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">HL7</span>
+                                <span class="tech-badge">Epic Beaker</span>
+                                <span class="tech-badge">Healthcare IT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/HL7-Lab-Results-Pipeline" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Optimizing Workflow to Improve Turnaround Time of Core Laboratory</h3>
-                        <p class="company">Kaiser Permanente</p>
-                        <p class="project-description">
-                            Led comprehensive workflow optimization initiative in the Core Laboratory, implementing data-driven solutions to enhance processing speed and operational efficiency.
-                        </p>
-                        <ul class="project-features">
-                            <li>Streamlined sample processing by integrating Lean Six Sigma methodologies, boosting efficiency and minimizing handling errors</li>
-                            <li>Orchestrated end-to-end workflow optimization utilizing data-driven analysis and industry best practices to enhance processing speed</li>
-                            <li>Revamped laboratory workflow by instituting automated tracking systems and harmonizing procedural steps</li>
-                            <li>Redesigned cross-departmental collaboration protocols by integrating advanced digital communication tools</li>
-                            <li>Instituted continuous performance monitoring dashboards for proactive identification of workflow inefficiencies</li>
-                        </ul>
-                        <div class="project-tech">
-                            <span class="tech-badge">Lean Six Sigma</span>
-                            <span class="tech-badge">Process Optimization</span>
-                            <span class="tech-badge">Performance Analytics</span>
-                            <span class="tech-badge">Automation</span>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            ⚡
+                        </div>
+                        <div class="project-content">
+                            <h3>Critical Values Alert System</h3>
+                            <p class="project-description">
+                                Real-time monitoring dashboard for lab TAT (Turnaround Time) with critical value detection and alert management.
+                            </p>
+                            <ul class="project-features">
+                                <li>Real-time lab turnaround time monitoring</li>
+                                <li>Critical value threshold configuration</li>
+                                <li>Interactive Streamlit dashboard</li>
+                                <li>Automated alert generation and routing</li>
+                                <li>Historical trend analysis and reporting</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Streamlit</span>
+                                <span class="tech-badge">pandas</span>
+                                <span class="tech-badge">Data Visualization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/Critical-Values-Alert-System" target="_blank" rel="noopener noreferrer">View Code</a>
+                                <a href="https://critical-values-alert-system.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            📊
+                        </div>
+                        <div class="project-content">
+                            <h3>Lab Order Tracking System</h3>
+                            <p class="project-description">
+                                Comprehensive laboratory order management system with workflow optimization and status tracking.
+                            </p>
+                            <ul class="project-features">
+                                <li>Complete lab order lifecycle management</li>
+                                <li>Real-time status tracking and updates</li>
+                                <li>Workflow optimization algorithms</li>
+                                <li>Integration with existing lab systems</li>
+                                <li>Performance analytics and reporting</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">Database</span>
+                                <span class="tech-badge">Process Optimization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/Lab-Order-Tracking-System" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🖥️
+                        </div>
+                        <div class="project-content">
+                            <h3>Lab Order Dashboard</h3>
+                            <p class="project-description">
+                                React-based frontend dashboard for laboratory order tracking with intuitive user interface and real-time updates.
+                            </p>
+                            <ul class="project-features">
+                                <li>Modern React-based user interface</li>
+                                <li>Real-time order status updates</li>
+                                <li>Interactive data visualization</li>
+                                <li>Responsive design for all devices</li>
+                                <li>Role-based access control</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Material-UI</span>
+                                <span class="tech-badge">API Integration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/lab-order-dashboard" target="_blank" rel="noopener noreferrer">View Code</a>
+                                <a href="https://lab-order-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🧪
+                        </div>
+                        <div class="project-content">
+                            <h3>FHIR Lab Test Catalog</h3>
+                            <p class="project-description">
+                                FHIR-compliant laboratory test catalog system for standardized healthcare data exchange and interoperability.
+                            </p>
+                            <ul class="project-features">
+                                <li>FHIR R4 standard compliance</li>
+                                <li>Comprehensive lab test catalog management</li>
+                                <li>Healthcare system interoperability</li>
+                                <li>RESTful API for system integration</li>
+                                <li>Standardized test result formatting</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">FHIR</span>
+                                <span class="tech-badge">REST API</span>
+                                <span class="tech-badge">Healthcare Standards</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/FHIR-Lab-Test-Catalog" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-screenshot">
-                        🔬
+            <!-- Bioinformatics & Genomics -->
+            <div class="project-categories">
+                <h3 class="category-title">🧬 Bioinformatics & Genomics</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🧬
+                        </div>
+                        <div class="project-content">
+                            <h3>NGS Variant Calling Pipeline</h3>
+                            <p class="project-description">
+                                Comprehensive bioinformatics pipeline for SNP detection in Next-Generation Sequencing data with clinical annotations.
+                            </p>
+                            <ul class="project-features">
+                                <li>Automated NGS data preprocessing and quality control</li>
+                                <li>SNP and INDEL variant calling algorithms</li>
+                                <li>Clinical significance annotation using VEP</li>
+                                <li>Population frequency analysis</li>
+                                <li>Comprehensive variant reporting</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Bioinformatics</span>
+                                <span class="tech-badge">NGS</span>
+                                <span class="tech-badge">Variant Calling</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/NGS-Variant-Calling-Pipeline" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Optimizing Workflow and Training in the Hematology Section</h3>
-                        <p class="company">Johns Hopkins Hospital | April 2024 - December 2024</p>
-                        <p class="project-description">
-                            Spearheaded a comprehensive optimization project in the Hematology section, focusing on workflow efficiency and equipment maintenance procedures.
-                        </p>
-                        <ul class="project-features">
-                            <li>Revamped workflow and training protocols, reducing processing time by 25% and increasing staff competency through targeted training</li>
-                            <li>Led a Lean project to optimize Sysmex stainer cleaning procedures in the hematology section</li>
-                            <li>Implemented methanol use in cleaning process to prevent stain buildup and reduce machine damage</li>
-                            <li>Achieved 30% reduction in maintenance downtime and extended equipment lifespan by an estimated 2 years</li>
-                            <li>Developed standardized training program with visual aids and step-by-step guides for consistent application</li>
-                        </ul>
-                        <div class="project-tech">
-                            <span class="tech-badge">Lean Methodology</span>
-                            <span class="tech-badge">Training Development</span>
-                            <span class="tech-badge">Equipment Optimization</span>
-                            <span class="tech-badge">Process Improvement</span>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            📊
+                        </div>
+                        <div class="project-content">
+                            <h3>AML Expression Analysis</h3>
+                            <p class="project-description">
+                                Bioinformatics analysis of Acute Myeloid Leukemia gene expression data for molecular subtype identification.
+                            </p>
+                            <ul class="project-features">
+                                <li>RNA-seq data preprocessing and normalization</li>
+                                <li>Differential gene expression analysis</li>
+                                <li>AML molecular subtype classification</li>
+                                <li>Pathway enrichment analysis</li>
+                                <li>Interactive visualization dashboard</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">RNA-seq</span>
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">Cancer Genomics</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/AML-Expression-Analysis" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🎓
+                        </div>
+                        <div class="project-content">
+                            <h3>JHU Bioinformatics Portfolio</h3>
+                            <p class="project-description">
+                                Comprehensive collection of Python programming coursework from Johns Hopkins Bioinformatics course with practical applications.
+                            </p>
+                            <ul class="project-features">
+                                <li>Advanced Python programming for bioinformatics</li>
+                                <li>Sequence analysis and alignment algorithms</li>
+                                <li>Phylogenetic analysis and tree construction</li>
+                                <li>Statistical analysis of biological data</li>
+                                <li>Computational genomics applications</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">BioPython</span>
+                                <span class="tech-badge">Genomics</span>
+                                <span class="tech-badge">Algorithms</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ugochi141/JHU_Bioinformatics_Portfolio" target="_blank" rel="noopener noreferrer">View Code</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-screenshot">
-                        📚
+            <!-- Process Improvement Projects -->
+            <div class="project-categories">
+                <h3 class="category-title">⚡ Process Improvement & Research</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            📈
+                        </div>
+                        <div class="project-content">
+                            <h3>Core Laboratory Workflow Optimization</h3>
+                            <p class="company">Kaiser Permanente</p>
+                            <p class="project-description">
+                                Led comprehensive workflow optimization initiative in the Core Laboratory, implementing data-driven solutions to enhance processing speed and operational efficiency.
+                            </p>
+                            <ul class="project-features">
+                                <li>Streamlined sample processing by integrating Lean Six Sigma methodologies</li>
+                                <li>Orchestrated end-to-end workflow optimization utilizing data-driven analysis</li>
+                                <li>Revamped laboratory workflow with automated tracking systems</li>
+                                <li>Redesigned cross-departmental collaboration protocols</li>
+                                <li>Instituted continuous performance monitoring dashboards</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Lean Six Sigma</span>
+                                <span class="tech-badge">Process Optimization</span>
+                                <span class="tech-badge">Performance Analytics</span>
+                                <span class="tech-badge">Automation</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Exploring Gender-Based Issues Associated with Late-Diagnosis of ADHD in Women</h3>
-                        <p class="company">George Washington University | August 2023 - August 2024</p>
-                        <p class="project-description">
-                            Conducted a comprehensive phenomenological study exploring the psychological and social impacts of late ADHD diagnosis in adult women, contributing to clinical practice improvements.
-                        </p>
-                        <ul class="project-features">
-                            <li>Designed and executed qualitative research study with 30 participants diagnosed after age 18</li>
-                            <li>Utilized in-depth interviews to explore personal narratives and understand barriers to early diagnosis</li>
-                            <li>Analyzed psychological and social impacts on personal and professional life</li>
-                            <li>Identified prolonged periods of mismanagement and significant emotional distress in late-diagnosed women</li>
-                            <li>Developed recommendations for clinical practice and policy reforms to enhance timely identification and support</li>
-                        </ul>
-                        <div class="project-tech">
-                            <span class="tech-badge">Qualitative Research</span>
-                            <span class="tech-badge">Phenomenological Analysis</span>
-                            <span class="tech-badge">Clinical Research</span>
-                            <span class="tech-badge">Public Health</span>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            🔬
+                        </div>
+                        <div class="project-content">
+                            <h3>Hematology Section Optimization</h3>
+                            <p class="company">Johns Hopkins Hospital | April 2024 - December 2024</p>
+                            <p class="project-description">
+                                Spearheaded comprehensive optimization project in the Hematology section, focusing on workflow efficiency and equipment maintenance procedures.
+                            </p>
+                            <ul class="project-features">
+                                <li>Reduced processing time by 25% through workflow and training protocol improvements</li>
+                                <li>Led Lean project to optimize Sysmex stainer cleaning procedures</li>
+                                <li>Implemented methanol use in cleaning process to prevent stain buildup</li>
+                                <li>Achieved 30% reduction in maintenance downtime</li>
+                                <li>Developed standardized training program with visual aids</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Lean Methodology</span>
+                                <span class="tech-badge">Training Development</span>
+                                <span class="tech-badge">Equipment Optimization</span>
+                                <span class="tech-badge">Process Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-screenshot">
+                            📚
+                        </div>
+                        <div class="project-content">
+                            <h3>ADHD in Women Research Study</h3>
+                            <p class="company">George Washington University | August 2023 - August 2024</p>
+                            <p class="project-description">
+                                Conducted comprehensive phenomenological study exploring psychological and social impacts of late ADHD diagnosis in adult women.
+                            </p>
+                            <ul class="project-features">
+                                <li>Designed and executed qualitative research study with 30 participants</li>
+                                <li>Utilized in-depth interviews to explore personal narratives</li>
+                                <li>Analyzed psychological and social impacts on personal and professional life</li>
+                                <li>Identified barriers to early diagnosis and mismanagement patterns</li>
+                                <li>Developed recommendations for clinical practice and policy reforms</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-badge">Qualitative Research</span>
+                                <span class="tech-badge">Phenomenological Analysis</span>
+                                <span class="tech-badge">Clinical Research</span>
+                                <span class="tech-badge">Public Health</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1187,7 +1618,7 @@
                     <span class="icon">🐙</span> GitHub
                 </a>
                 <a href="#" class="contact-link">
-                    <span class="icon">📍</span> South Laurel, Maryland
+                    <span class="icon">📍</span> Maryland, United States
                 </a>
             </div>
         </div>
