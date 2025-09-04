@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Lab Performance Analytics Platform",
+      "description": "Real-time TAT monitoring with predictive analytics",
+      "github": "https://github.com/ugochi141/lab-performance-analytics",
+      "tech": ["Python", "FastAPI", "PostgreSQL", "React"],
+      "impact": "Improved TAT compliance from 48% to 85%"
+    },
+    {
+      "id": 2,
+      "name": "QC Compliance Tracker",
+      "description": "Automated quality control with Westgard rules",
+      "github": "https://github.com/ugochi141/qc-compliance-tracker",
+      "tech": ["Python", "MongoDB", "D3.js"],
+      "impact": "Reduced QC failures by 40%"
+    },
+    {
+      "id": 3,
+      "name": "Patient Wait Time Optimizer",
+      "description": "AI queue management for phlebotomy",
+      "github": "https://github.com/ugochi141/patient-wait-optimizer",
+      "tech": ["Python", "Machine Learning", "Redis"],
+      "impact": "Improved wait time compliance to 85%"
+    },
+    {
+      "id": 4,
+      "name": "Smart Inventory Management",
+      "description": "Predictive inventory system",
+      "github": "https://github.com/ugochi141/lab-inventory-system",
+      "tech": ["Node.js", "Express", "MongoDB"],
+      "impact": "Reduced stockouts by 60%"
+    },
+    {
+      "id": 5,
+      "name": "Team Performance Portal",
+      "description": "Staff monitoring and development system",
+      "github": "https://github.com/ugochi141/team-performance-portal",
+      "tech": ["Python", "FastAPI", "PostgreSQL"],
+      "impact": "Increased productivity by 20%"
+    },
+    {
+      "id": 6,
+      "name": "NGS Pipeline Manager",
+      "description": "Automated genomics data analysis",
+      "github": "https://github.com/ugochi141/ngs-pipeline-manager",
+      "tech": ["Python", "Nextflow", "GATK", "BWA"],
+      "impact": "Reduced analysis time by 75%"
+    },
+    {
+      "id": 7,
+      "name": "2nd Shift Performance Dashboard",
+      "description": "Real-time shift performance monitoring",
+      "github": "https://github.com/ugochi141/shift-performance-dashboard",
+      "tech": ["Python", "WebSocket", "React"],
+      "impact": "Identified and resolved critical staffing issues"
+    },
+    {
+      "id": 8,
+      "name": "STAT Order System",
+      "description": "Priority order management and escalation",
+      "github": "https://github.com/ugochi141/stat-order-system",
+      "tech": ["Node.js", "Redis", "Twilio"],
+      "impact": "Achieved 95% STAT compliance"
+    },
+    {
+      "id": 9,
+      "name": "Volume-Performance Correlation Engine",
+      "description": "ML model for performance prediction",
+      "github": "https://github.com/ugochi141/volume-correlation-engine",
+      "tech": ["Python", "scikit-learn", "TensorFlow"],
+      "impact": "Accurate performance forecasting"
+    },
+    {
+      "id": 10,
+      "name": "Error Pattern Recognition",
+      "description": "AI system for error prevention",
+      "github": "https://github.com/ugochi141/error-pattern-recognition",
+      "tech": ["Python", "Machine Learning", "Anomaly Detection"],
+      "impact": "Reduced errors by 35%"
+    },
+    {
+      "id": 11,
+      "name": "Specimen Routing Optimizer",
+      "description": "AI-based workflow optimization",
+      "github": "https://github.com/ugochi141/specimen-routing-optimizer",
+      "tech": ["Python", "NetworkX", "Optimization"],
+      "impact": "Improved throughput by 25%"
+    },
+    {
+      "id": 12,
+      "name": "Critical Value Platform",
+      "description": "Automated alert management system",
+      "github": "https://github.com/ugochi141/critical-value-platform",
+      "tech": ["Python", "FastAPI", "SMS/Email"],
+      "impact": "100% critical value notification"
+    },
+    {
+      "id": 13,
+      "name": "Maintenance Predictor",
+      "description": "Equipment failure prediction system",
+      "github": "https://github.com/ugochi141/maintenance-predictor",
+      "tech": ["Python", "Random Forest", "Time Series"],
+      "impact": "Reduced downtime by 40%"
+    },
+    {
+      "id": 14,
+      "name": "Workflow Optimizer",
+      "description": "Process mining and optimization",
+      "github": "https://github.com/ugochi141/workflow-optimizer",
+      "tech": ["Python", "SimPy", "Process Mining"],
+      "impact": "30% efficiency improvement"
+    },
+    {
+      "id": 15,
+      "name": "Compliance Automator",
+      "description": "CAP/CLIA compliance monitoring",
+      "github": "https://github.com/ugochi141/compliance-automator",
+      "tech": ["Node.js", "Automated Auditing"],
+      "impact": "Maintained 100% compliance"
+    }
+  ]
+}
