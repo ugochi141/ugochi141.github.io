@@ -119,6 +119,14 @@
       "github": "https://github.com/ugochi141/compliance-automator",
       "tech": ["Node.js", "Automated Auditing"],
       "impact": "Maintained 100% compliance"
+    },
+    {
+      "id": 16,
+      "name": "Kaiser Lab Automation System",
+      "description": "Comprehensive laboratory automation platform integrating Microsoft Teams, Power BI, and Notion for real-time monitoring and workflow optimization",
+      "github": "https://github.com/ugochi141/kaiser-lab-automation",
+      "tech": ["Python", "Power BI", "Microsoft Teams", "Notion API", "FastAPI"],
+      "impact": "Automated 90% of daily operational tasks, reduced manual reporting by 5 hours/day"
     }
   ]
 }
