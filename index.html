@@ -604,6 +604,28 @@
             font-weight: 600;
         }
 
+        .cert-card .credential-id {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            font-family: 'Courier New', monospace;
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            display: inline-block;
+        }
+
+        .cert-card .skills-tag {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            margin-top: 0.75rem;
+            line-height: 1.5;
+            padding: 0.5rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 0.5rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
         /* Skills Section */
         .skills-section {
             background-color: var(--bg-primary);
@@ -1211,24 +1233,27 @@
                         <div class="project-content">
                             <h3>Lab Order Dashboard</h3>
                             <p class="project-description">
-                                React-based frontend dashboard for laboratory order tracking with intuitive user interface and real-time updates.
+                                React-based frontend dashboard for laboratory order tracking with intuitive user interface and real-time updates. Seamlessly integrates with the EPIC Beaker Laboratory Management Portal for comprehensive lab operations management.
                             </p>
                             <ul class="project-features">
                                 <li>Modern React-based user interface</li>
                                 <li>Real-time order status updates</li>
-                                <li>Interactive data visualization</li>
+                                <li>Interactive data visualization with charts and analytics</li>
                                 <li>Responsive design for all devices</li>
                                 <li>Role-based access control</li>
+                                <li>Integration with Lab Management Portal</li>
                             </ul>
                             <div class="project-tech">
                                 <span class="tech-badge">React</span>
-                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">TypeScript</span>
                                 <span class="tech-badge">Material-UI</span>
+                                <span class="tech-badge">Vercel</span>
                                 <span class="tech-badge">API Integration</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/ugochi141/lab-order-dashboard" target="_blank" rel="noopener noreferrer">View Code</a>
-                                <a href="https://lab-order-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://lab-order-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer">Live Dashboard</a>
+                                <a href="https://ugochi141.github.io/lab-management-portal/" target="_blank" rel="noopener noreferrer">Management Portal</a>
                             </div>
                         </div>
                     </div>
@@ -1615,39 +1640,61 @@
             
             <div class="cert-grid">
                 <div class="cert-card">
-                    <h4>Nationally Certified Medical Technologist MT(AMT)</h4>
-                    <p class="issuer">American Medical Technologists</p>
-                    <p class="year">2025</p>
+                    <h4>Certified Scrum Product Owner (CSPO)</h4>
+                    <p class="issuer">Scrum Alliance</p>
+                    <p class="year">Issued Oct 2025 · Expires Oct 2027</p>
+                    <p class="credential-id">Credential ID: 001791165</p>
                 </div>
-                
+
                 <div class="cert-card">
-                    <h4>Nationally Certified Technologist in Molecular Biology MB(ASCP)</h4>
-                    <p class="issuer">American Society of Clinical Pathology</p>
-                    <p class="year">2025</p>
+                    <h4>Data Scientist Associate</h4>
+                    <p class="issuer">DataCamp</p>
+                    <p class="year">Issued Aug 2025 · Expires Aug 2027</p>
+                    <p class="credential-id">Credential ID: DSA0017714780938</p>
+                    <p class="skills-tag">Skills: Data Science · Team Leadership · Project Management</p>
                 </div>
-                
+
+                <div class="cert-card">
+                    <h4>Epic Credentialed Trainer - Beaker</h4>
+                    <p class="issuer">Johns Hopkins Hospital</p>
+                    <p class="year">Issued Oct 2024</p>
+                    <p class="skills-tag">Skills: Team Leadership · Life Sciences · Electronic Medical Record (EMR) · Project Management · Epic Systems</p>
+                </div>
+
+                <div class="cert-card">
+                    <h4>Lean Practitioner for Healthcare Certificate</h4>
+                    <p class="issuer">Johns Hopkins Armstrong Institute for Patient Safety and Quality</p>
+                    <p class="year">Issued Oct 2024</p>
+                    <p class="skills-tag">Skills: Workflow Optimization · Lean Management · Team Leadership · Data Science · Project Management · Lean Six Sigma</p>
+                </div>
+
                 <div class="cert-card">
                     <h4>Lean Six Sigma Green Belt</h4>
                     <p class="issuer">Johns Hopkins Armstrong Institute for Patient Safety and Quality</p>
-                    <p class="year">2024</p>
+                    <p class="year">Issued Oct 2024</p>
+                    <p class="skills-tag">Skills: Workflow Optimization · Team Leadership · Data Science · Project Management</p>
                 </div>
-                
+
                 <div class="cert-card">
-                    <h4>Asynchronous Lean Practitioner for Healthcare</h4>
-                    <p class="issuer">Johns Hopkins Armstrong Institute for Patient Safety and Quality</p>
-                    <p class="year">2024</p>
+                    <h4>Google Data Analytics Certificate</h4>
+                    <p class="issuer">Coursera</p>
+                    <p class="year">Issued Jun 2023</p>
+                    <p class="skills-tag">Skills: Team Leadership · Data Science · Project Management</p>
                 </div>
-                
+
                 <div class="cert-card">
-                    <h4>Certificate in Molecular Diagnostics</h4>
-                    <p class="issuer">Old Dominion University</p>
-                    <p class="year">2019</p>
+                    <h4>Medical Laboratory Scientist</h4>
+                    <p class="issuer">American Medical Technologists</p>
+                    <p class="year">Issued Sep 2022 · Expired Oct 2025</p>
+                    <p class="credential-id">Credential ID: 2907776</p>
+                    <p class="skills-tag">Skills: Team Leadership · Strategic Thinking · Life Sciences · Workforce Development</p>
                 </div>
-                
+
                 <div class="cert-card">
-                    <h4>Epic Beaker Certified</h4>
-                    <p class="issuer">Epic Systems</p>
-                    <p class="year">2024</p>
+                    <h4>Technologist in Molecular Biology</h4>
+                    <p class="issuer">American Society for Clinical Pathology (ASCP)</p>
+                    <p class="year">Issued Feb 2019 · Expired Feb 2025</p>
+                    <p class="skills-tag">Skills: Team Leadership · Strategic Thinking · NGS Data Analysis · Life Sciences · Workforce Development</p>
                 </div>
             </div>
         </div>
