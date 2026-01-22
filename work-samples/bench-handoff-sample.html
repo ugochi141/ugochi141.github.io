@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hematology Bench Handoff Log - Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #222;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border: 1.5px solid #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .back-link {
+            background: #2c5aa0;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background: #1a3d6e;
+        }
+        .sample-badge {
+            background: #dc3545;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 10pt;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        header .title {
+            font-size: 1.1em;
+            color: #2c5aa0;
+            margin-bottom: 0.3em;
+        }
+        header h1 {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0 0 0.1em 0;
+            color: #2c5aa0;
+        }
+        header .subtitle {
+            font-size: 0.95em;
+            color: #444;
+            font-weight: 500;
+        }
+        h2 {
+            margin: 1.2em 0 0.4em 0;
+            font-size: 1.05em;
+            font-weight: 600;
+            padding: 0.4em 0.6em;
+            background: #2c5aa0;
+            color: #fff;
+            border-radius: 4px;
+        }
+        h3 {
+            margin: 0.8em 0 0.3em 0;
+            font-size: 0.98em;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.2em;
+        }
+        .section {
+            margin-bottom: 1em;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 0.4em;
+            align-items: center;
+        }
+        .row label {
+            min-width: 140px;
+            font-weight: 500;
+            color: #121212;
+            margin-right: 0.5em;
+        }
+        .space {
+            flex: 1;
+            height: 1.3em;
+            border-bottom: 1px solid #999;
+            min-width: 100px;
+        }
+        .qc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.6em 0;
+            font-size: 0.9em;
+        }
+        .qc-table th, .qc-table td {
+            border: 1px solid #333;
+            padding: 0.5em 0.6em;
+            text-align: left;
+        }
+        .qc-table th {
+            background: #e8f0fe;
+            font-weight: 600;
+            color: #222;
+        }
+        .qc-table .task-col {
+            width: 45%;
+        }
+        .qc-table .check-col {
+            width: 12%;
+            text-align: center;
+        }
+        .qc-table .init-col {
+            width: 10%;
+            text-align: center;
+        }
+        .qc-table .notes-col {
+            width: 21%;
+        }
+        .qc-table .category-row {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+        .qc-table .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #333;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
+        .qc-table .check-label {
+            font-size: 0.85em;
+            vertical-align: middle;
+        }
+        .shift-header {
+            background: #2c5aa0;
+            color: #fff;
+            padding: 0.4em 0.6em;
+            font-weight: 600;
+            font-size: 0.95em;
+            border-radius: 4px 4px 0 0;
+            margin-top: 1em;
+        }
+        .shift-header.day {
+            background: #28a745;
+        }
+        .shift-header.evening {
+            background: #fd7e14;
+        }
+        .shift-header.night {
+            background: #6f42c1;
+        }
+        .notes-section {
+            background: #fffbe6;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .notes-section h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .pending-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .pending-box h4 {
+            color: #856404;
+            margin: 0 0 10px 0;
+        }
+        .critical-box {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .critical-box h4 {
+            color: #721c24;
+            margin: 0 0 10px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-size: 9pt;
+        }
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: 1px solid #999;
+            }
+            .back-link, .sample-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="../index.html#work-samples" class="back-link">← Back to Portfolio</a>
+
+    <header>
+        <div class="title">Clinical Laboratory</div>
+        <h1>Hematology Bench Handoff Log</h1>
+        <p class="subtitle">Shift-to-Shift Communication Tool</p>
+        <span class="sample-badge">SAMPLE DOCUMENT</span>
+    </header>
+
+    <!-- Basic Info Section -->
+    <div class="section">
+        <h2>Shift Information</h2>
+        <div class="row">
+            <label>Date:</label>
+            <span class="space"></span>
+            <label style="margin-left:30px;">Day of Week:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row">
+            <label>Outgoing Tech:</label>
+            <span class="space"></span>
+            <label style="margin-left:30px;">Shift:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row">
+            <label>Incoming Tech:</label>
+            <span class="space"></span>
+            <label style="margin-left:30px;">Shift:</label>
+            <span class="space"></span>
+        </div>
+    </div>
+
+    <!-- Equipment Status -->
+    <div class="section">
+        <h2>Equipment Status</h2>
+        <table class="qc-table">
+            <thead>
+                <tr>
+                    <th class="task-col">Analyzer / Equipment</th>
+                    <th class="check-col">Operational</th>
+                    <th class="check-col">Issues</th>
+                    <th class="notes-col">Notes / Service Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sysmex XN-Series</strong> (Primary)</td>
+                    <td style="text-align:center;"><span class="checkbox yes-box"></span> <span class="check-label">Yes</span></td>
+                    <td style="text-align:center;"><span class="checkbox"></span> <span class="check-label">No</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Sysmex XN-Series</strong> (Backup)</td>
+                    <td style="text-align:center;"><span class="checkbox yes-box"></span> <span class="check-label">Yes</span></td>
+                    <td style="text-align:center;"><span class="checkbox"></span> <span class="check-label">No</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Hematek Stainer</strong></td>
+                    <td style="text-align:center;"><span class="checkbox yes-box"></span> <span class="check-label">Yes</span></td>
+                    <td style="text-align:center;"><span class="checkbox"></span> <span class="check-label">No</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Centrifuges</strong></td>
+                    <td style="text-align:center;"><span class="checkbox yes-box"></span> <span class="check-label">Yes</span></td>
+                    <td style="text-align:center;"><span class="checkbox"></span> <span class="check-label">No</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Microscopes</strong></td>
+                    <td style="text-align:center;"><span class="checkbox yes-box"></span> <span class="check-label">Yes</span></td>
+                    <td style="text-align:center;"><span class="checkbox"></span> <span class="check-label">No</span></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Day Shift QC Tasks -->
+    <div class="shift-header day">DAY SHIFT TASKS (7:00a - 3:30p)</div>
+    <table class="qc-table">
+        <thead>
+            <tr>
+                <th class="task-col">Task</th>
+                <th class="check-col">Done</th>
+                <th class="init-col">Init</th>
+                <th class="notes-col">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="category-row">
+                <td colspan="4">STARTUP / QC</td>
+            </tr>
+            <tr>
+                <td>Perform Daily QC - All Levels (Low/Normal/High)</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Review QC results - Apply Westgard Rules</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Document QC in log and LIS</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Hematek Stainer - Daily QC slide</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="category-row">
+                <td colspan="4">ROUTINE TESTING</td>
+            </tr>
+            <tr>
+                <td>Process STAT specimens within 30 minutes</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Report critical values within 30 minutes</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Manual differentials completed</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Body fluid analysis completed</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="category-row">
+                <td colspan="4">MAINTENANCE</td>
+            </tr>
+            <tr>
+                <td>Clean aperture / probe wipe</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Check reagent levels - order if low</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Wipe down benches</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Evening Shift Tasks -->
+    <div class="shift-header evening">EVENING SHIFT TASKS (3:00p - 11:30p)</div>
+    <table class="qc-table">
+        <thead>
+            <tr>
+                <th class="task-col">Task</th>
+                <th class="check-col">Done</th>
+                <th class="init-col">Init</th>
+                <th class="notes-col">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Review/accept day shift QC</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Process pending specimens from day shift</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Perform PM QC if scheduled</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Weekly maintenance (if scheduled)</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Shutdown procedures</td>
+                <td style="text-align:center;"><span class="checkbox"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pending Items -->
+    <div class="pending-box">
+        <h4>⏳ PENDING ITEMS FOR NEXT SHIFT</h4>
+        <div class="row">
+            <label>Pending Specimens:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row">
+            <label>Add-on Tests:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row">
+            <label>Recollection Needed:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row" style="margin-top:10px;">
+            <label>Other Notes:</label>
+            <span class="space"></span>
+        </div>
+    </div>
+
+    <!-- Critical Items -->
+    <div class="critical-box">
+        <h4>⚠️ CRITICAL ITEMS / ISSUES</h4>
+        <div class="row">
+            <label>Equipment Issues:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row">
+            <label>QC Failures:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row">
+            <label>Patient Results Pending Review:</label>
+            <span class="space"></span>
+        </div>
+        <div class="row" style="margin-top:10px;">
+            <label>Service Calls:</label>
+            <span class="space"></span>
+        </div>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="notes-section">
+        <h3>📝 Additional Notes / Communication</h3>
+        <div style="min-height:80px;border-bottom:1px solid #ccc;margin-bottom:10px;"></div>
+        <div style="min-height:80px;border-bottom:1px solid #ccc;"></div>
+    </div>
+
+    <!-- Signatures -->
+    <div class="section" style="margin-top:25px;">
+        <h2>Acknowledgment</h2>
+        <div class="row" style="margin-top:20px;">
+            <label>Outgoing Tech Signature:</label>
+            <span class="space"></span>
+            <label style="margin-left:30px;">Time:</label>
+            <span class="space" style="max-width:100px;"></span>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <label>Incoming Tech Signature:</label>
+            <span class="space"></span>
+            <label style="margin-left:30px;">Time:</label>
+            <span class="space" style="max-width:100px;"></span>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Work Sample - Ugochi Ndubuisi Portfolio</strong></p>
+        <p>This document demonstrates laboratory workflow tools for shift-to-shift communication and task tracking.</p>
+        <p>Original document created for healthcare organization - identifying information removed.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

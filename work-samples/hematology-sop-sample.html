@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>Hematology Standard Operating Procedure - Sample</title>
+    <style>
+/* Clinical Laboratory SOP Template - De-branded Sample */
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:8.5in 11in;margin:0.75in}
+html{font-size:10pt;width:100%;overflow-x:hidden;height:100%;background:#f5f5f5}
+body{font-family:Arial,sans-serif;font-size:10pt;line-height:1.5;color:#333;max-width:7in;margin:0 auto;padding:15px;background:#f5f5f5;min-height:100vh;display:flex;flex-direction:column}
+.container{background:#ffffff;padding:25px;border-radius:8px;box-shadow:0 0 15px rgba(0,0,0,0.15);max-width:100%;margin:0;flex:1;overflow:visible}
+
+/* Header Styling */
+.header{text-align:center;border-bottom:3px solid #2c5aa0;padding-bottom:15px;margin-bottom:25px}
+.header h1{color:#2c5aa0;font-size:20pt;margin-bottom:8px;font-weight:bold}
+.header h2{color:#666;font-size:12pt;margin:0;font-weight:normal}
+.sample-badge{background:#dc3545;color:#fff;padding:5px 15px;border-radius:20px;font-size:10pt;font-weight:bold;display:inline-block;margin-top:10px}
+
+/* Table of Contents */
+.toc{background:#f0f8ff;padding:15px;border-left:4px solid #2c5aa0;margin-bottom:25px;border-radius:4px}
+.toc h3{color:#2c5aa0;margin-top:0;font-size:12pt;margin-bottom:10px}
+.toc-columns{display:flex;gap:30px}
+.toc-column{flex:1}
+.toc ul{list-style:none;padding:0}
+.toc li{margin:6px 0;padding-left:15px}
+.toc a{color:#2c5aa0;text-decoration:none;font-weight:500}
+.toc a:hover{text-decoration:underline}
+
+/* Section Styling */
+.section{margin:30px 0;border-bottom:1px solid #e0e0e0;padding-bottom:20px}
+.section:last-child{border-bottom:none}
+
+/* Headings */
+h1,h2{color:#2c5aa0;font-size:14pt;margin-bottom:15px;border-bottom:2px solid #2c5aa0;padding-bottom:6px}
+h3{color:#1a3d6e;font-size:11pt;margin:20px 0 12px 0}
+h4{color:#333;font-size:10pt;margin:15px 0 8px 0;font-weight:bold}
+
+/* Text Elements */
+p{margin:8px 0;text-align:left}
+ul,ol{margin:8px 0 8px 25px;padding:0}
+li{margin:4px 0;line-height:1.5}
+
+/* Special Sections */
+.key-concept{background:#e3f2fd;border-left:4px solid #2196f3;padding:15px;margin:15px 0;border-radius:4px}
+.key-concept h4{color:#1565c0;margin-top:0}
+.procedure-section{background:#f9f9f9;padding:15px;border-radius:6px;margin:15px 0;border-left:3px solid #28a745}
+.warning,.warning-box{background:#fff3cd;border:1px solid #ffeaa7;border-left:3px solid #f39c12;padding:12px;margin:12px 0;border-radius:4px;position:relative}
+.warning::before,.warning-box::before{content:'⚠';color:#ff9900;font-size:16pt;position:absolute;right:10px;top:10px}
+.info-box{background:#d1ecf1;border:1px solid #bee5eb;border-left:3px solid #17a2b8;padding:12px;margin:12px 0;border-radius:4px}
+.critical-values{background:#f8d7da;border:2px solid #f5c6cb;border-radius:6px;padding:15px;margin:18px 0;position:relative}
+.critical-values::before{content:'⚠';color:#ff0000;font-size:20pt;position:absolute;right:15px;top:15px}
+.critical-values h3{color:#721c24;margin-top:0}
+
+/* Table Styling */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:9pt;box-shadow:0 1px 3px rgba(0,0,0,0.1);border-radius:6px;overflow:hidden;background:#fff}
+table thead{background:linear-gradient(135deg,#e8f4f8 0%,#d1e7f3 100%)}
+table th{color:#000;padding:10px 8px;text-align:left;font-weight:600;letter-spacing:0.3px;border-right:1px solid rgba(0,0,0,0.1)}
+table th:last-child{border-right:none}
+table tbody tr{border-bottom:1px solid #e0e0e0}
+table td{padding:8px;border-right:1px solid #e0e0e0}
+table td:last-child{border-right:none}
+table tbody tr:nth-child(even){background:#f8f9fa}
+
+/* QC Failure Section */
+.qc-failure-section{background:linear-gradient(135deg,#f8fbff 0%,#f0f7ff 100%);padding:25px;border-radius:10px;margin:25px 0;border-left:5px solid #2196F3;box-shadow:0 2px 8px rgba(33,150,243,0.1)}
+.qc-failure-section h3{color:#1565C0;font-size:16pt;border-bottom:3px solid #2196F3;padding-bottom:10px;margin-bottom:20px}
+
+/* Document Info */
+.document-info{background:linear-gradient(135deg,#f8fafc 0%,#edf2f7 100%);border:1px solid #e2e8f0;border-left:4px solid #2c5aa0;padding:15px;border-radius:4px;margin-bottom:25px;font-size:9pt}
+
+/* Back to Portfolio Link */
+.back-link{background:#2c5aa0;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;display:inline-block;margin-bottom:20px;font-weight:bold}
+.back-link:hover{background:#1a3d6e}
+
+/* Print Styles */
+@media print{
+    @page{size:8.5in 11in;margin:0.75in}
+    *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+    body{background:#fff;margin:0;padding:0;max-width:100%;font-size:9pt}
+    .container{box-shadow:none;border-radius:0;padding:0;max-width:100%;margin:0}
+    .back-link,.sample-badge{display:none}
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<a href="../index.html#work-samples" class="back-link">← Back to Portfolio</a>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Hematology Procedure</h1>
+    <h2>Standard Operating Procedure</h2>
+    <span class="sample-badge">SAMPLE DOCUMENT</span>
+</div>
+
+<!-- DOCUMENT INFO -->
+<div class="document-info">
+    <strong>Document ID:</strong> HEMA-SOP-001 |
+    <strong>Version:</strong> 2.0 |
+    <strong>Effective Date:</strong> January 2025 |
+    <strong>Department:</strong> Hematology<br>
+    <strong>Author:</strong> Ugochi Ndubuisi, DHSc, MLS(AMT), MB(ASCP) |
+    <strong>Classification:</strong> Clinical Laboratory Procedure
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+    <h3>Table of Contents</h3>
+    <div class="toc-columns">
+        <div class="toc-column">
+            <ul>
+                <li><a href="#purpose">1. Purpose & Scope</a></li>
+                <li><a href="#principle">2. Principle of Testing</a></li>
+                <li><a href="#specimen">3. Specimen Requirements</a></li>
+                <li><a href="#equipment">4. Equipment & Reagents</a></li>
+                <li><a href="#qc">5. Quality Control</a></li>
+            </ul>
+        </div>
+        <div class="toc-column">
+            <ul>
+                <li><a href="#procedure">6. Procedure Steps</a></li>
+                <li><a href="#critical">7. Critical Values</a></li>
+                <li><a href="#troubleshooting">8. Troubleshooting</a></li>
+                <li><a href="#references">9. References</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 1: PURPOSE -->
+<div class="section" id="purpose">
+    <h2>1. Purpose & Scope</h2>
+    <p>This Standard Operating Procedure (SOP) establishes guidelines for performing Complete Blood Count (CBC) analysis and differential white blood cell counts using automated hematology analyzers.</p>
+
+    <div class="key-concept">
+        <h4>Clinical Significance</h4>
+        <p>The Complete Blood Count (CBC) is one of the most commonly ordered laboratory tests. It provides essential information about:</p>
+        <ul>
+            <li><strong>Red Blood Cells (RBC):</strong> Oxygen-carrying capacity, anemia detection</li>
+            <li><strong>White Blood Cells (WBC):</strong> Immune function, infection, inflammation</li>
+            <li><strong>Platelets:</strong> Clotting ability, bleeding disorders</li>
+            <li><strong>Hemoglobin/Hematocrit:</strong> Blood oxygen levels, dehydration</li>
+        </ul>
+    </div>
+
+    <h3>Scope</h3>
+    <p>This procedure applies to all CBC and differential testing performed on:</p>
+    <ul>
+        <li>Inpatient specimens</li>
+        <li>Outpatient/ambulatory care specimens</li>
+        <li>Emergency department specimens</li>
+        <li>Critical care specimens</li>
+    </ul>
+</div>
+
+<!-- SECTION 2: PRINCIPLE -->
+<div class="section" id="principle">
+    <h2>2. Principle of Testing</h2>
+
+    <div class="info-box">
+        <h4>Automated Hematology Analysis Methods</h4>
+        <p>Modern hematology analyzers use multiple technologies for comprehensive cell analysis:</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Technology</th>
+                <th>Parameter Measured</th>
+                <th>Principle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Electrical Impedance</strong></td>
+                <td>Cell count, cell size (MCV)</td>
+                <td>Cells passing through aperture disrupt electrical current</td>
+            </tr>
+            <tr>
+                <td><strong>Flow Cytometry</strong></td>
+                <td>WBC differential, reticulocytes</td>
+                <td>Light scatter and fluorescence patterns</td>
+            </tr>
+            <tr>
+                <td><strong>Spectrophotometry</strong></td>
+                <td>Hemoglobin concentration</td>
+                <td>Cyanmethemoglobin absorbance at 540nm</td>
+            </tr>
+            <tr>
+                <td><strong>Optical Detection</strong></td>
+                <td>Platelet count, RBC indices</td>
+                <td>Laser light scatter analysis</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 3: SPECIMEN REQUIREMENTS -->
+<div class="section" id="specimen">
+    <h2>3. Specimen Requirements</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Requirement</th>
+                <th>Specification</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Collection Tube</td>
+                <td>EDTA (Lavender top)</td>
+                <td>K2EDTA or K3EDTA</td>
+            </tr>
+            <tr>
+                <td>Minimum Volume</td>
+                <td>2.0 mL (adult), 0.5 mL (pediatric)</td>
+                <td>Fill to line on tube</td>
+            </tr>
+            <tr>
+                <td>Stability - Room Temp</td>
+                <td>24 hours</td>
+                <td>For CBC only</td>
+            </tr>
+            <tr>
+                <td>Stability - Refrigerated</td>
+                <td>72 hours</td>
+                <td>Differential affected after 6 hours</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="warning">
+        <h4>Specimen Rejection Criteria</h4>
+        <ul>
+            <li>Clotted specimens</li>
+            <li>Hemolyzed specimens (affects WBC, platelet counts)</li>
+            <li>Underfilled tubes (&lt;75% fill volume)</li>
+            <li>Wrong anticoagulant (not EDTA)</li>
+            <li>Unlabeled or mislabeled specimens</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SECTION 5: QC -->
+<div class="section" id="qc">
+    <h2>5. Quality Control</h2>
+
+    <h3>Daily QC Requirements</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>QC Level</th>
+                <th>Frequency</th>
+                <th>Parameters</th>
+                <th>Action Limits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Level 1 (Low)</td>
+                <td>Every 8 hours or each shift</td>
+                <td>All CBC parameters</td>
+                <td>±2 SD from target</td>
+            </tr>
+            <tr>
+                <td>Level 2 (Normal)</td>
+                <td>Every 8 hours or each shift</td>
+                <td>All CBC parameters</td>
+                <td>±2 SD from target</td>
+            </tr>
+            <tr>
+                <td>Level 3 (High)</td>
+                <td>Every 8 hours or each shift</td>
+                <td>All CBC parameters</td>
+                <td>±2 SD from target</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="qc-failure-section">
+        <h3>QC Failure Protocol (Westgard Rules)</h3>
+
+        <div class="info-box">
+            <h4>1:2s Warning Rule</h4>
+            <p><strong>Trigger:</strong> One control exceeds ±2 SD</p>
+            <p><strong>Action:</strong> Warning only - inspect other rules before releasing results</p>
+        </div>
+
+        <div class="warning">
+            <h4>1:3s Rejection Rule</h4>
+            <p><strong>Trigger:</strong> One control exceeds ±3 SD</p>
+            <p><strong>Action:</strong> STOP TESTING. Do not release patient results. Begin troubleshooting.</p>
+        </div>
+
+        <h4>QC Failure Corrective Actions:</h4>
+        <ol>
+            <li>Verify QC material is not expired</li>
+            <li>Check QC material preparation/handling</li>
+            <li>Run new vial of QC material</li>
+            <li>Perform background check if applicable</li>
+            <li>Contact supervisor if failure persists</li>
+            <li>Document all corrective actions taken</li>
+        </ol>
+    </div>
+</div>
+
+<!-- SECTION 7: CRITICAL VALUES -->
+<div class="section" id="critical">
+    <h2>7. Critical Values</h2>
+
+    <div class="critical-values">
+        <h3>Critical Value Reporting</h3>
+        <p><strong>All critical values must be reported to the ordering provider within 30 minutes.</strong></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Low Critical</th>
+                    <th>High Critical</th>
+                    <th>Clinical Significance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>WBC</strong></td>
+                    <td>&lt;2.0 x10⁹/L</td>
+                    <td>&gt;30.0 x10⁹/L</td>
+                    <td>Infection risk / Leukemia</td>
+                </tr>
+                <tr>
+                    <td><strong>Hemoglobin</strong></td>
+                    <td>&lt;7.0 g/dL</td>
+                    <td>&gt;20.0 g/dL</td>
+                    <td>Severe anemia / Polycythemia</td>
+                </tr>
+                <tr>
+                    <td><strong>Hematocrit</strong></td>
+                    <td>&lt;20%</td>
+                    <td>&gt;60%</td>
+                    <td>Blood loss / Dehydration</td>
+                </tr>
+                <tr>
+                    <td><strong>Platelets</strong></td>
+                    <td>&lt;50 x10⁹/L</td>
+                    <td>&gt;1000 x10⁹/L</td>
+                    <td>Bleeding risk / Thrombosis risk</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Critical Value Reporting Steps:</h4>
+        <ol>
+            <li>Verify result accuracy (repeat if needed)</li>
+            <li>Call ordering provider or designated nurse</li>
+            <li>Document name, date, time of notification</li>
+            <li>Request read-back of critical value</li>
+            <li>Document in LIS critical value log</li>
+        </ol>
+    </div>
+</div>
+
+<!-- SECTION 8: TROUBLESHOOTING -->
+<div class="section" id="troubleshooting">
+    <h2>8. Troubleshooting</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Problem</th>
+                <th>Possible Cause</th>
+                <th>Corrective Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>High WBC count flags</td>
+                <td>NRBC interference, clumps</td>
+                <td>Review peripheral smear, correct manually</td>
+            </tr>
+            <tr>
+                <td>Low platelet count</td>
+                <td>Platelet clumping, giant platelets</td>
+                <td>Check for clumps, redraw in citrate tube</td>
+            </tr>
+            <tr>
+                <td>Hemolysis interference</td>
+                <td>Difficult draw, improper handling</td>
+                <td>Request recollection</td>
+            </tr>
+            <tr>
+                <td>QC out of range</td>
+                <td>Reagent, calibration, temperature</td>
+                <td>Follow QC failure protocol</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 9: REFERENCES -->
+<div class="section" id="references">
+    <h2>9. References</h2>
+    <ol>
+        <li>Clinical and Laboratory Standards Institute (CLSI). H26-A2: Validation, Verification, and Quality Assurance of Automated Hematology Analyzers. 2nd ed. 2010.</li>
+        <li>CLSI H20-A2: Reference Leukocyte (WBC) Differential Count. 2007.</li>
+        <li>CAP Laboratory Accreditation Checklist - Hematology and Coagulation. 2024.</li>
+        <li>42 CFR Part 493 - Laboratory Requirements (CLIA '88).</li>
+        <li>WHO Guidelines on Drawing Blood: Best Practices in Phlebotomy. 2010.</li>
+    </ol>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;margin-top:40px;padding-top:20px;border-top:2px solid #e0e0e0;color:#666;font-size:9pt;">
+    <p><strong>Work Sample - Ugochi Ndubuisi Portfolio</strong></p>
+    <p>This document demonstrates SOP development expertise for CAP/CLIA-compliant clinical laboratories.</p>
+    <p>Original document created for healthcare organization - identifying information removed.</p>
+</div>
+
+</div>
+
+</body>
+</html>

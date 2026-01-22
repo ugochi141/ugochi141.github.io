@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Laboratory Educational Infographics - Ugochi Ndubuisi Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .back-link {
+            background: #2c5aa0;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            background: #1a3d6e;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1a3d6e 100%);
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .sample-badge {
+            background: #dc3545;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .intro {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .intro h2 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+        .intro ul {
+            margin-left: 20px;
+        }
+        .intro li {
+            margin: 8px 0;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .gallery-item .info {
+            padding: 20px;
+        }
+        .gallery-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .gallery-item p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .gallery-item .tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background: #e8f0fe;
+            color: #2c5aa0;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        .stat-card .label {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            color: #666;
+        }
+        /* Modal for full-size images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+        .modal-content {
+            margin: 2% auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal-close:hover {
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="../index.html#work-samples" class="back-link">← Back to Portfolio</a>
+
+    <header>
+        <h1>Clinical Laboratory Educational Infographics</h1>
+        <p>Visual Learning Resources for Laboratory Professionals</p>
+        <span class="sample-badge">SAMPLE COLLECTION</span>
+    </header>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="number">130+</div>
+            <div class="label">Infographics Created</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">8</div>
+            <div class="label">Lab Departments</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">25+</div>
+            <div class="label">Staff Trained</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">100%</div>
+            <div class="label">CAP Compliant</div>
+        </div>
+    </div>
+
+    <div class="intro">
+        <h2>About This Collection</h2>
+        <p>These educational infographics were developed as part of a comprehensive laboratory training and competency program. Each infographic is designed to:</p>
+        <ul>
+            <li><strong>Enhance Visual Learning:</strong> Complex procedures simplified into clear, step-by-step visual guides</li>
+            <li><strong>Support Competency Assessment:</strong> Align with CAP/CLIA training requirements</li>
+            <li><strong>Standardize Procedures:</strong> Ensure consistency across all shifts and staff</li>
+            <li><strong>Reduce Errors:</strong> Quick reference guides at point-of-care to minimize mistakes</li>
+        </ul>
+        <p style="margin-top:15px;color:#666;"><em>Note: These are sample infographics with organizational branding removed. The full collection includes 130+ infographics covering all laboratory departments.</em></p>
+    </div>
+
+    <h2 style="color:#2c5aa0;margin-bottom:20px;">Sample Infographics</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="infographics/ABO Blood Group System Visual Guide.png" alt="ABO Blood Group System" onclick="openModal(this.src)">
+            <div class="info">
+                <h3>ABO Blood Group System Visual Guide</h3>
+                <p>Comprehensive visual guide explaining ABO blood typing, antigen-antibody reactions, and transfusion compatibility.</p>
+                <div class="tags">
+                    <span class="tag">Blood Bank</span>
+                    <span class="tag">Transfusion</span>
+                    <span class="tag">Immunohematology</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="infographics/Blood Coagulation Cascade Visual Guide.png" alt="Blood Coagulation Cascade" onclick="openModal(this.src)">
+            <div class="info">
+                <h3>Blood Coagulation Cascade Visual Guide</h3>
+                <p>Step-by-step visualization of intrinsic, extrinsic, and common pathways with clinical correlations and lab test interpretations.</p>
+                <div class="tags">
+                    <span class="tag">Coagulation</span>
+                    <span class="tag">Hemostasis</span>
+                    <span class="tag">PT/INR</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="infographics/Anemia Diagnosis Visual Quick Guide.png" alt="Anemia Diagnosis" onclick="openModal(this.src)">
+            <div class="info">
+                <h3>Anemia Diagnosis Visual Quick Guide</h3>
+                <p>Algorithm-based approach to anemia classification using MCV, reticulocyte count, and peripheral smear findings.</p>
+                <div class="tags">
+                    <span class="tag">Hematology</span>
+                    <span class="tag">Anemia</span>
+                    <span class="tag">Diagnosis</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="infographics/Blood Smear Step-by-Step Guide.png" alt="Blood Smear Preparation" onclick="openModal(this.src)">
+            <div class="info">
+                <h3>Blood Smear Step-by-Step Guide</h3>
+                <p>Detailed technique for preparing, staining, and evaluating peripheral blood smears with common error corrections.</p>
+                <div class="tags">
+                    <span class="tag">Hematology</span>
+                    <span class="tag">Technique</span>
+                    <span class="tag">Quality</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="intro">
+        <h2>Full Collection Categories</h2>
+        <p>The complete infographic library covers the following departments and topics:</p>
+        <ul>
+            <li><strong>Hematology (25+ infographics):</strong> CBC interpretation, cell morphology, anemia workup, leukemia classification</li>
+            <li><strong>Chemistry (30+ infographics):</strong> Metabolic panels, liver function, renal function, cardiac markers</li>
+            <li><strong>Blood Bank (20+ infographics):</strong> ABO/Rh typing, antibody identification, crossmatching, transfusion reactions</li>
+            <li><strong>Coagulation (15+ infographics):</strong> PT/INR, aPTT, D-dimer, anticoagulant monitoring</li>
+            <li><strong>Urinalysis (12+ infographics):</strong> Dipstick interpretation, microscopic analysis, crystal identification</li>
+            <li><strong>Microbiology (15+ infographics):</strong> Gram stain, culture interpretation, antibiotic susceptibility</li>
+            <li><strong>Molecular (8+ infographics):</strong> PCR basics, COVID testing, GeneXpert procedures</li>
+            <li><strong>Point-of-Care (10+ infographics):</strong> Rapid tests, iSTAT, glucose monitoring</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p><strong>Work Sample - Ugochi Ndubuisi Portfolio</strong></p>
+        <p>These infographics demonstrate expertise in creating educational materials for clinical laboratory staff training and competency assessment.</p>
+        <p>Created using evidence-based guidelines from CAP, CLSI, and manufacturer documentation.</p>
+    </footer>
+
+</div>
+
+<!-- Modal for full-size images -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+function openModal(src) {
+    document.getElementById('imageModal').style.display = 'block';
+    document.getElementById('modalImage').src = src;
+}
+
+function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+</script>
+
+</body>
+</html>
